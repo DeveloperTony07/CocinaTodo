@@ -1,0 +1,19 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+
+//set nabvar color bakground
+.nav-bg{
+    @include mixins.set-color-background(vars.$clr-red);
+}
+
+.nav-pd{
+    padding-right: 7rem;
+}
+
+.btn-check-in{
+    @include mixins.set-color-background(vars.$clr-dark);
+    @include mixins.set-font(vars.$fw-semibold, vars.$fs-sm, vars.$clr-white);
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}

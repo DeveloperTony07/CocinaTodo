@@ -1,0 +1,18 @@
+@use '../abstracts/vars';
+
+//set color for background
+@mixin set-color-background($color){
+    background-color: $color;
+}
+
+@mixin set-color-txt($color){
+    color: $color;
+}
+
+//set fonts for titles and sections
+@mixin set-font($fweight, $fsize, $fcolor){
+    font-weight: $fweight;
+    font-size: $fsize ;   
+    color: $fcolor;
+}
+

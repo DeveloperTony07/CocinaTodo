@@ -1,0 +1,8 @@
+@use '../abstracts/mixins';
+@use '../abstracts/vars';
+
+.nav-txt{
+    @include mixins.set-font(vars.$fw-semibold, vars.$fs-sm, vars.$clr-dark);
+    text-decoration: none;
+    padding: 1rem
+}
