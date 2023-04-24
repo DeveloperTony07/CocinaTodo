@@ -6,7 +6,7 @@ app.component('nabvar-component', {
     },
     template:
     /* html */
-    ` <header>
+    ` <header class="pt-5">
     <nav class="navbar nav-bg navbar-expand-lg">
         <div class="container-fluid">
             <img class="ps-3 nav-pd" v-bind:src="image" alt="graphicIdentifer">
@@ -28,7 +28,7 @@ app.component('nabvar-component', {
                     </li>
                 </ul>
                 <form class="d-flex">
-                    <a class="btn-check-in href="#">Registrarse</a>
+                    <a class="btn-check-in" href="#">Registrarse</a>
                 </form>
             </div>
         </div>

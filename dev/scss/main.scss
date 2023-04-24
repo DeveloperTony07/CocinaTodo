@@ -7,8 +7,14 @@
 @use './base/reset';
 @use './base/typography.scss';
 
+// components
+@use './components/search-bar';
+
 // layout
 @use './layout/navbar';
+
+// pages
+@use './pages/index';
 
 // Vendors
 @use './vendors/bootstrap/bootstrap.scss';

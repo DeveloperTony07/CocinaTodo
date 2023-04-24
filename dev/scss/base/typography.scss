@@ -1,8 +1,8 @@
-@use '../abstracts/mixins';
 @use '../abstracts/vars';
+@use '../abstracts/mixins';
+@use '../abstracts/media-queries';
 
-.nav-txt{
-    @include mixins.set-font(vars.$fw-semibold, vars.$fs-sm, vars.$clr-dark);
-    text-decoration: none;
-    padding: 1rem
+.title-header{
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-lg, vars.$clr-white);
+    text-shadow: 10px 10px 5px vars.$clr-dark;
 }

@@ -1,12 +1,16 @@
-@use '../abstracts/vars';
-
 //set color for background
 @mixin set-color-background($color){
     background-color: $color;
 }
 
+//set color for text
 @mixin set-color-txt($color){
     color: $color;
+}
+
+//set color border for search bar
+@mixin set-border($size ,$color){
+    border: $size solid $color;
 }
 
 //set fonts for titles and sections
