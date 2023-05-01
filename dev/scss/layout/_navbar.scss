@@ -1,49 +1,141 @@
 @use '../abstracts/vars';
-@use '../abstracts/mixins';
+@use '../abstracts/mixins.scss';
 @use '../abstracts/media-queries';
 
-//set nabvar color bakground
-.nav-bg {
-    @include mixins.set-color-background(vars.$clr-red);
-    border-radius: 1rem 1rem 0rem 0rem;
-
+.header {
+    @include mixins.set-background-color(vars.$clr-red);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 100px 25px 100px;
 }
 
-//this padding-right is used for center the elements navbar
-.nav-pd {
-    padding-right: 17rem;
-}
-
-
-.btn-check-in {
-    @include mixins.set-color-background(vars.$clr-dark);
-    @include mixins.set-font(vars.$fw-semibold, vars.$fs-sm, vars.$clr-white);
+.header a {
     text-decoration: none;
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    border-radius: 1rem;
+}
+
+.header .logo {
+    cursor: pointer;
+}
+
+.header .logo img {
+    height: 100px;
+    width: auto;
+}
+
+.header .logo img:hover {
+    transform: scale(1.2);
+}
+
+.header .nav-links {
+    list-style: none;
+}
+
+.header .nav-links li {
+    display: inline-block;
+}
+
+.header .nav-links li:hover {
+    transform: scale(1.1);
+}
+
+.header .nav-links a {
+    margin: 0 0 0 100px;
+}
+
+.btn-nav-menu{
+    display: none;
+}
+
+.header .btn-nav-menu button {
+    @include mixins.set-font(vars.$fw-semibold, vars.$fs-xmed, vars.$clr-red);
+    @include mixins.set-background-color(vars.$clr-white);
+    border: none;
+    padding: 15px 15px 15px 15px;
+    border-radius: 5px;
+    cursor: pointer;
     transition: 0.5s ease;
 }
 
-//This class is used for the navbar button
-.btn-check-in:hover {
-    @include mixins.set-color-background(vars.$clr-white);
-    @include mixins.set-font(vars.$fw-bold, vars.$fs-sm, vars.$clr-red);
-    text-decoration: none;
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    border-radius: 1rem;
+.header .btn-nav-menu button:hover {
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-xmed, vars.$clr-red);
+    transform: scale(1.1);
 }
 
-//This class is used for the navbar texts
 .nav-txt {
-    @include mixins.set-font(vars.$fw-bold, vars.$fs-sm, vars.$clr-dark);
-    text-decoration: none;
-    padding: 1rem;
+    @include mixins.set-font(vars.$fw-regular, vars.$fs-xmed, vars.$clr-white);
     transition: 0.5s ease;
 }
 
 .nav-txt:hover {
-    @include mixins.set-font(vars.$fw-bold, vars.$fs-sm, vars.$clr-white);
-    text-decoration: none;
-    padding: 1rem;
-    text-shadow: 10px 10px 5px vars.$clr-dark;
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-xmed, vars.$clr-dark);
+    //padding: 1rem;
+    //text-shadow: 0px 0px 20px vars.$clr-light-dark;
 }
+
+@media screen and (max-width: 1206px) {
+    .nav-links {
+        display: none;
+    }
+
+    .btn-nav-menu {
+        display: inherit;
+    }
+}
+
+/* Nav */
+
+
+.header .overlay {
+    height: 28.4%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    @include mixins.set-background-color(vars.$clr-red);
+    overflow: hidden;
+    transition: all 0.3 ease 0s;
+}
+
+.header .overlay .overlay-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    padding: 25px;
+}
+
+.header .overlay .overlay-content li{
+    list-style: none;
+}
+
+.header .overlay a {
+    padding: 15px;
+    display: block;
+    transition: all 0.3 ease 0s;
+    @include mixins.set-font(vars.$fw-regular, vars.$fs-xmed, vars.$clr-white);
+}
+
+.header .overlay a:hover {
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-xmed, vars.$clr-dark);
+    transform: scale(1.1);
+}
+
+.header .overlay .close {
+    position: absolute;
+    //margin: 0px 50px 0 50px;
+    top: 20px;
+    right: 45px;
+    font-size: 40px;
+}
+
+.header .overlay .close:hover {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 40px;
+}
+
+@include media-queries.respond-to(media-queries.$phone) {}

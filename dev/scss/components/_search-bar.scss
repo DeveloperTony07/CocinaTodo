@@ -2,13 +2,10 @@
 @use '../abstracts/mixins';
 @use '../abstracts/media-queries';
 
-.search-div{
-    text-align: end;
-}
-
 .search-bar{
     position: relative;
     padding: 5px;
+    text-align: end;
 }
 
 .search-bar input{

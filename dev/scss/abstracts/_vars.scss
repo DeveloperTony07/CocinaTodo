@@ -1,5 +1,3 @@
-//font: https://fonts.google.com/specimen/Source+Sans+Pro
-
 //font-family
 $ff: 'Source Sans Pro', sans-serif;
 
@@ -8,16 +6,20 @@ $fw-regular: 400;
 $fw-semibold: 600;
 $fw-bold: 700;
 
-//font-size
-$fs-lg: 3rem; 
-$fs-xmed: 2rem; 
-$fs-med: 1.5rem; 
-$fs-sm: 1.25rem; 
-$fs-xsm: 1rem; 
-$fs-xxsm: 0.8rem; 
+//font-size 
+$fs-xlg: 2.25rem; //36px
+$fs-lg: 2rem;//32px
+$fs-xxmed: 1.75rem; //28px
+$fs-xmed: 1.50rem;//24
+$fs-med: 1.25rem;//20px
+$fs-sm: 1rem; //16px
+$fs-xsm: 0.75rem; //12px
+$fs-xxsm: 0.5rem; //8px
 
-//Colors
-$clr-dark: #010A26;
-$clr-white: hsl(0, 0%, 100%);
-$clr-red: #F23D4C;
-$clr-cream: hsl(54, 72%, 83%);
+// Colors
+$clr-dark: rgba(1, 10, 38, 1);
+$clr-light-dark: rgba(1, 10, 38, 0.5);
+$clr-red: rgba(242, 61, 76, 1);
+$clr-light-red: rgba(242, 61, 76, 0.5);
+$clr-cream:  rgba(242, 225, 174, 0.5);
+$clr-white: rgba(255, 255, 255, 1);

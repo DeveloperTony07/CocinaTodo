@@ -1,8 +1,0 @@
-@use '../abstracts/vars';
-@use '../abstracts/mixins';
-@use '../abstracts/media-queries';
-
-.title-header{
-    @include mixins.set-font(vars.$fw-bold, vars.$fs-lg, vars.$clr-white);
-    text-shadow: 10px 10px 5px vars.$clr-dark;
-}

@@ -1,20 +1,9 @@
 // abstracts
-@use './abstracts/vars';
-@use './abstracts/media-queries';
-@use './abstracts/mixins';
+@use "./abstracts/vars";
+@use "./abstracts/mixins.scss";
 
 // base
-@use './base/reset';
-@use './base/typography.scss';
+@use "./base/reset";
 
-// components
-@use './components/search-bar';
-
-// layout
-@use './layout/navbar';
-
-// pages
-@use './pages/index';
-
-// Vendors
-@use './vendors/bootstrap/bootstrap.scss';
+//layout
+@use "./layout/navbar";

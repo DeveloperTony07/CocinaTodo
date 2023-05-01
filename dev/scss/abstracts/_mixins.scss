@@ -1,16 +1,6 @@
-//set color for background
-@mixin set-color-background($color){
+// This mixin is used for establish backgroun colors
+@mixin set-background-color($color){
     background-color: $color;
-}
-
-//set color for text
-@mixin set-color-txt($color){
-    color: $color;
-}
-
-//set color border for search bar
-@mixin set-border($size ,$color){
-    border: $size solid $color;
 }
 
 //set fonts for titles and sections
@@ -19,4 +9,10 @@
     font-size: $fsize ;   
     color: $fcolor;
 }
+
+//set color for the texts
+@mixin set-color($color){
+    color: $color;
+}
+
 

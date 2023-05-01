@@ -1,5 +1,8 @@
-@use '../abstracts/vars';
+html{
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
 
 body{
-    font-family: vars.$ff;
+    margin: 0px;
 }
