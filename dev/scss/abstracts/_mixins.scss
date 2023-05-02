@@ -15,4 +15,7 @@
     color: $color;
 }
 
+@mixin set-border($size-border, $color){
+    border: $size-border solid $color;
+}
 

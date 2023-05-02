@@ -2,7 +2,8 @@ const app = Vue.createApp({
     data(){
         return{
             hola: "Hola Mundo",
-            image: "./svgs/LogoWhite.svg"
+            logoWhite: "./svgs/LogoWhite.svg",
+            imgHeader: "./imgs/header.jpg"
         }
     }
 });

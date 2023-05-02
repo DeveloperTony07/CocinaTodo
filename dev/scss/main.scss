@@ -1,9 +1,16 @@
 // abstracts
 @use "./abstracts/vars";
 @use "./abstracts/mixins.scss";
+@use "./abstracts/media-queries";
 
 // base
 @use "./base/reset";
 
-//layout
+// components
+@use "./components/search-bar";
+
+// layout
 @use "./layout/navbar";
+
+// pages
+@use "./pages/index";
