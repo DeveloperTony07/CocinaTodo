@@ -2,11 +2,18 @@
 @use '../abstracts/mixins';
 @use '../abstracts/media-queries';
 
+
 .flex-container{
-    @include mixins.set-background-color(vars.$clr-light-red);
-    margin: 50px 150px 50px 150px;
+    //@include mixins.set-background-color(vars.$clr-light-red);
+    margin: 50px 25px 0px 0px;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+
+}
+
+
+.ma-t-1{
+    margin-top: 20px;
 }

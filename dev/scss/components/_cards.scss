@@ -2,6 +2,16 @@
 @use '../abstracts/mixins';
 @use '../abstracts/vars';
 
+.flex-container-card{
+    @include mixins.set-background-color(vars.$clr-light-red);
+    margin: 50px 50px 50px 50px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+
 .cards{
     margin: 1rem;
     @include mixins.set-background-color(vars.$clr-cream);
@@ -11,6 +21,7 @@
 
 .cards img{
     height: 50%;
+    border-radius: 5px 5px 0 0;
 }
 
 .cards .cards-body{

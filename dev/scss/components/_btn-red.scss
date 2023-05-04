@@ -5,8 +5,14 @@
 .btn-red{
     @include mixins.set-background-color(vars.$clr-red);
     border: none;
+    padding: 7.5px 0px 7.5px 0px;
+    width: 100%;
+    border-radius: 3px;
+    margin-top: 60px;
+    text-align: center;
 }
 
 .btn-red a{
     text-decoration: none;
+    @include mixins.set-font(vars.$fw-semibold, vars.$fs-med, vars.$clr-white);
 }

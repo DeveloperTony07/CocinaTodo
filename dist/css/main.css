@@ -1,3 +1,4 @@
+/* Texto de los cards */
 .txt-recipe-name-card {
   font-weight: 700;
   font-size: 1.25rem;
@@ -17,6 +18,7 @@
   color: rgba(1, 10, 38, 0.7);
 }
 
+/* Texto de los cards */
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -30,6 +32,7 @@ body {
 .search-bar {
   padding: 5px;
   text-align: center;
+  margin-right: 25px;
 }
 
 .search-bar input {
@@ -40,17 +43,30 @@ body {
   border: 3px solid rgb(242, 61, 76);
   border-radius: 30px;
 }
+@media only screen and (max-width: 500px) {
+  .search-bar input {
+    margin-right: 0px;
+    margin-left: 35px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .search-bar input {
+    width: 375px;
+  }
+}
 
 /*
 .search-bar input:hover{
     @include mixins.set-border(3px ,vars.$clr-dark);
 }
 */
-@media screen and (max-width: 800px) {
-  .search-bar {
-    margin: 25px 30px 25px 30px;
-  }
+/*
+@media screen and (max-width: 800px){
+    .search-bar{
+        margin: 25px 30px 25px 30px;
+    }
 }
+*/
 /*
 .search-bar:hover input{
     width: 100%;
@@ -80,8 +96,9 @@ body {
 
 .dropdowns select {
   padding: 7.5px 0px 7.5px 0px;
-  width: 250px;
+  width: 300px;
   text-align: center;
+  margin-right: 25px;
   border: none;
   border-radius: 5px;
   border: 3px solid rgb(242, 61, 76);
@@ -89,9 +106,42 @@ body {
   font-size: 1rem;
   color: rgb(242, 61, 76);
 }
+@media only screen and (max-width: 500px) {
+  .dropdowns select {
+    margin-top: 25px;
+    width: 350px;
+    margin-right: 0px;
+    margin-left: 15px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .dropdowns select {
+    margin-top: 25px;
+    width: 375px;
+  }
+}
 
-.ml-30 {
-  margin-left: 32px;
+/*
+.ml-30{
+    margin-left: 32px;
+}
+*/
+.flex-container-card {
+  background-color: rgba(242, 61, 76, 0.5);
+  margin: 50px 50px 50px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .cards {
@@ -103,6 +153,7 @@ body {
 
 .cards img {
   height: 50%;
+  border-radius: 5px 5px 0 0;
 }
 
 .cards .cards-body {
@@ -113,10 +164,18 @@ body {
 .btn-red {
   background-color: rgb(242, 61, 76);
   border: none;
+  padding: 7.5px 0px 7.5px 0px;
+  width: 100%;
+  border-radius: 3px;
+  margin-top: 60px;
+  text-align: center;
 }
 
 .btn-red a {
   text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
 }
 
 .header {
@@ -332,8 +391,7 @@ body {
 }
 
 .flex-container {
-  background-color: rgba(242, 61, 76, 0.5);
-  margin: 50px 150px 50px 150px;
+  margin: 50px 25px 0px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -344,7 +402,11 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ma-t-1 {
+  margin-top: 20px;
 }
