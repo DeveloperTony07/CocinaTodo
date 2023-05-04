@@ -8,9 +8,11 @@
 
 // components
 @use "./components/search-bar";
+@use "./components/dropdowns";
 
 // layout
 @use "./layout/navbar";
+@use "./layout/header_img";
 
 // pages
 @use "./pages/index";

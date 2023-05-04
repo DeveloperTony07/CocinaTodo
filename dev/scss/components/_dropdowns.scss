@@ -1,0 +1,8 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+@use '../abstracts/media-queries';
+
+.dropdowns{
+    @include mixins.set-background-color(vars.$clr-red);
+    padding: 25px;
+}

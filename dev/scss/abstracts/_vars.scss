@@ -7,12 +7,10 @@ $fw-semibold: 600;
 $fw-bold: 700;
 
 //font-size 
-$fs-xlg: 2.25rem; //36px
 $fs-lg: 2rem;//32px
-$fs-xxmed: 1.75rem; //28px
-$fs-xmed: 1.50rem;//24px
-$fs-med: 1.25rem;//20px
-$fs-sm: 1rem; //16px
+$fs-xmed: 1.25rem;//20px 
+$fs-med: 1rem;//16px
+$fs-sm: 0.875rem; //14px
 $fs-xsm: 0.75rem; //12px
 $fs-xxsm: 0.5rem; //8px
 
@@ -23,3 +21,4 @@ $clr-red: rgba(242, 61, 76, 1);
 $clr-light-red: rgba(242, 61, 76, 0.5);
 $clr-cream:  rgba(242, 225, 174, 0.5);
 $clr-white: rgba(255, 255, 255, 1);
+$clr-light-white: rgba(255, 255, 255, 0.5);

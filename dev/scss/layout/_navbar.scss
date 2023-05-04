@@ -24,13 +24,13 @@
 
 // Scale logo size
 .header .logo img {
-    height: 75px;
+    height: 65px;
     width: auto;
 }
 
 // Scale image size when cursor is on top
 .header .logo img:hover {
-    transform: scale(1.2);
+    transform: scale(1.09);
 }
 
 // Class located in <ul> tag
@@ -48,10 +48,10 @@
 }
 
 .header .nav-links a {
-    margin: 0 0 0 100px;
+    margin: 0 0 0 30px;
 }
 
-.btn-nav-menu{
+.btn-nav-menu {
     display: none;
 }
 
@@ -83,7 +83,7 @@
 }
 
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 690px) {
     .nav-links {
         display: none;
     }
@@ -91,19 +91,22 @@
     .btn-nav-menu {
         display: inherit;
     }
-
-    @media screen and (max-width: 800px){
-        .header{
-            padding: 25px 30px 25px 30px;
-        }
-    }
-
 }
+
+
+// Pading de los header
+@media screen and (max-width: 800px) {
+    .header {
+        padding: 25px 30px 25px 30px;
+    }
+}
+
+
 
 
 /* Nav */
 .header .overlay {
-    height: 43%;
+    height: 250px;
     width: 0;
     position: fixed;
     z-index: 1;
@@ -123,7 +126,7 @@
     padding: 25px;
 }
 
-.header .overlay .overlay-content li{
+.header .overlay .overlay-content li {
     list-style: none;
 }
 
