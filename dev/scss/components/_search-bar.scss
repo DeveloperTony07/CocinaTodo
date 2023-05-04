@@ -10,8 +10,8 @@
 }
 
 .search-bar input{
-    width: 250px;
-    height: 30px;
+    width: 350px;
+    height: 40px;
     font-size: 16px;
     @include mixins.set-color(vars.$clr-dark);
     //outline: none;
@@ -20,9 +20,11 @@
     //transition: all 1s ease;
 }
 
+/*
 .search-bar input:hover{
     @include mixins.set-border(3px ,vars.$clr-dark);
 }
+*/
 
 @media screen and (max-width: 800px){
     .search-bar{

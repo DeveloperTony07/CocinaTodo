@@ -3,6 +3,21 @@
 @use '../abstracts/media-queries';
 
 .dropdowns{
-    @include mixins.set-background-color(vars.$clr-red);
-    padding: 25px;
+   background-color: transparent;
 }
+
+.dropdowns select{
+    padding: 7.5px 0px 7.5px 0px ;
+    width: 250px;
+    text-align: center;
+    //@include mixins.set-background-color(vars.$clr-red);
+    border: none;
+    border-radius: 5px;
+    @include mixins.set-border(3px, vars.$clr-red);
+    @include mixins.set-font(vars.$fw-regular, vars.$fs-med, vars.$clr-red);
+}
+
+.ml-30{
+    margin-left: 32px;
+}
+

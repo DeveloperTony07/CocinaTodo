@@ -1,0 +1,12 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+@use '../abstracts/media-queries';
+
+.btn-red{
+    @include mixins.set-background-color(vars.$clr-red);
+    border: none;
+}
+
+.btn-red a{
+    text-decoration: none;
+}
