@@ -105,27 +105,58 @@
         <!-- Stard Section Carsds -->
 
         <section>
-                <div class="mb-1">
-                    <div class="food-type-limit mt-1 header-limit">
-                        <h3 class="margin-t mt-5 ms-5">100 Resultados</h3>
-                    </div>
+            <div class="mb-1">
+                <div class="food-type-limit mt-1 header-limit">
+                    <h3 class="margin-t mt-5 ms-5">100 Resultados</h3>
                 </div>
+            </div>
 
-                <div class="row flex-container-card">
-                    <div v-for="(item,index) in recipes" class="col">
-                        <div class="card cards">
-                            <img v-bind:src="item.image" class="card-img-top" alt="receta">
-                            <div class="cards-body">
-                                <h5 class="txt-recipe-name-card">{{item.name}}</h5>
-                                <p class="txt-content-card ma-t-1">Categoria: <span>{{item.category}}</span></p>
-                                <p class="txt-content-card">Ocación: <span>{{item.ocasions}}</span></p>
+            <div class="row flex-container-card">
+                <div v-for="(item,index) in recipes" class="col">
+                    <div class="card cards">
+                        <img v-bind:src="item.image" class="card-img-top" alt="receta">
+                        <div class="cards-body">
+                            <h5 class="txt-recipe-name-card">{{item.name}}</h5>
+                            <p class="txt-content-card ma-t-1">Categoria: <span>{{item.category}}</span></p>
+                            <p class="txt-content-card">Ocación: <span>{{item.ocasions}}</span></p>
+                            <div>
                                 <p class="txt-content-card">Didicultad: <span>{{item.level}}</span></p>
-                                <button class="btn-red"><a href="#">VER RECETA</a></button>
+                            <button class="btn btn-danger" v-on:click="onClickLike(index)">Like</button>
+                            <p>{{item.likes}}</p>
                             </div>
+                            
+                            <button class="btn-red" v-on:click="onClickViewRecipe(index)" data-bs-toggle="modal" data-bs-target="#exampleModal"><a
+                                    href="#">VER RECETA</a></button>
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class=" txt-modal-name fs-5" id="staticBackdropLabel">{{recipes[selectedIndex].name}}</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body txt-modal-content">
+                            <img class="d-block m-auto img-fluid" v-bind:src="recipes[selectedIndex].image"
+                            alt="{{ recipes[selectedIndex].name }}">
+                            <p class="txt-center pt-3">Categoria: <span>{{recipes[selectedIndex].category}}</span></p>
+                            <p class="txt-center pt-3">Ocaciones: <span>{{recipes[selectedIndex].ocasions}}</span></p>
+                            <p class="txt-center pt-3">Nivel: <span>{{recipes[selectedIndex].level}}</span></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" v-on:click="onClickPrev()">Prev</button>
+                        <button type="button" class="btn btn-secondary" v-on:click="onClickPrev()">Next</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+        <!-- Modal -->
         <!-- End Section Cards -->
 
 

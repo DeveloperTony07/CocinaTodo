@@ -16,12 +16,17 @@
     }
 }
 
+.flex-like{
+    display: flex;
+    flex-flow: row wrap;
+}
+
 .cards{
     //margin: 1rem;
     margin-top: 25px;
     @include mixins.set-background-color(vars.$clr-cream);
     //padding: 25px;
-    height: 530px;
+    height: 690px;
     width: 300px;
     @media screen and (max-width:1320px) {
         width: 250px;
@@ -36,7 +41,7 @@
 }
 
 .cards img{
-    height: 45%;
+    height: 50%;
     border-radius: 5px 5px 0 0;
 }
 
