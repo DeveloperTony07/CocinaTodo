@@ -3,26 +3,40 @@
 @use '../abstracts/vars';
 
 .flex-container-card{
-    @include mixins.set-background-color(vars.$clr-light-red);
-    margin: 50px 0px 50px 0px;
+   // @include mixins.set-background-color(vars.$clr-light-red);
+    //margin: 50px 0px 50px 0px;
     display: flex;
     flex-flow: row wrap;
-    //align-items: center;
+    //padding: 25px 0 0 55px;
+    margin: 25px 0 0 25px;
+    align-items: center;
     //justify-content: center;
-
+    @include media-queries.respond-to(media-queries.$phone){
+        margin: 25px 15px 0 0px;
+    }
 }
 
 .cards{
     //margin: 1rem;
     margin-top: 25px;
     @include mixins.set-background-color(vars.$clr-cream);
-    padding: 0;
-    height: 600px;
+    //padding: 25px;
+    height: 530px;
     width: 300px;
+    @media screen and (max-width:1320px) {
+        width: 250px;
+    }
+    @media screen and (max-width:600px){
+        width: 400px
+    }
+    @include media-queries.respond-to(media-queries.$phone){
+        width: 335px;
+        //justify-content: center;
+    }
 }
 
 .cards img{
-    height: 50%;
+    height: 45%;
     border-radius: 5px 5px 0 0;
 }
 

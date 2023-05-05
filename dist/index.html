@@ -92,9 +92,10 @@
             </div>
             <div class="dropdowns ml-30">
                 <select name="ocaciones" id="Dificultad">
-                    <option value="Cumpleaños">Fácil</option>
-                    <option value="Día del Padre">Medio</option>
-                    <option value="Día de la Madre">Dificil</option>
+                    <option value="Nivel">Nivel</option>
+                    <option value="Facil">Fácil</option>
+                    <option value="Medio">Medio</option>
+                    <option value="Dificil">Dificil</option>
                 </select>
             </div>
             <!-- Dropdowns -->
@@ -103,16 +104,15 @@
 
         <!-- Stard Section Carsds -->
 
-        <section class="flex-container">
-            <div class="container margin-tp ">
+        <section>
                 <div class="mb-1">
                     <div class="food-type-limit mt-1 header-limit">
-                        <h3 class="margin-t">100 Resultados</h3>
+                        <h3 class="margin-t mt-5 ms-5">100 Resultados</h3>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div v-for="(item,index) in recipes" class="col-sm">
+                <div class="row flex-container-card">
+                    <div v-for="(item,index) in recipes" class="col">
                         <div class="card cards">
                             <img v-bind:src="item.image" class="card-img-top" alt="receta">
                             <div class="cards-body">
@@ -124,7 +124,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
         </section>
         <!-- End Section Cards -->

@@ -17,14 +17,14 @@
     @include mixins.set-color(vars.$clr-dark);
     @include mixins.set-border(3px ,vars.$clr-red);
     border-radius: 30px;
-
-    @include media-queries.respond-to(media-queries.$phone){
-        margin-right: 0px;
-        margin-left: 35px;
-    }
     //transition: all 1s ease;
     @media screen and (max-width: 1400px){
         width: 375px;
+    }
+    @include media-queries.respond-to(media-queries.$phone){
+        margin-right: 0px;
+        margin-left: 25px;
+        width: 300px;
     }
 }
 

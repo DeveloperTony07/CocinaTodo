@@ -2,12 +2,12 @@
 @use '../abstracts/mixins';
 @use '../abstracts/media-queries';
 
-.dropdowns{
-   background-color: transparent;
+.dropdowns {
+    background-color: transparent;
 }
 
-.dropdowns select{
-    padding: 7.5px 0px 7.5px 0px ;
+.dropdowns select {
+    padding: 7.5px 0px 7.5px 0px;
     width: 300px;
     text-align: center;
     margin-right: 25px;
@@ -15,17 +15,17 @@
     border-radius: 5px;
     @include mixins.set-border(3px, vars.$clr-red);
     @include mixins.set-font(vars.$fw-regular, vars.$fs-med, vars.$clr-red);
-    
-    @include media-queries.respond-to(media-queries.$phone){
-        margin-top: 25px;
-        width: 350px;
-        margin-right: 0px;
-        margin-left: 15px;
-    }
 
-    @media screen and (max-width: 1400px){
+    @media screen and (max-width: 1400px) {
         margin-top: 25px;
         width: 375px;
+    }
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        margin-top: 25px;
+        width: 300px;
+        margin-right: 0px;
+        margin-left: 0px;
     }
 }
 
@@ -34,4 +34,3 @@
     margin-left: 32px;
 }
 */
-
