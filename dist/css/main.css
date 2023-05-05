@@ -128,7 +128,7 @@ body {
 */
 .flex-container-card {
   background-color: rgba(242, 61, 76, 0.5);
-  margin: 50px 50px 50px 50px;
+  margin: 50px 0px 50px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -136,19 +136,14 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .cards {
-  margin: 1rem;
+  margin-top: 25px;
   background-color: rgba(242, 225, 174, 0.5);
   padding: 0;
   height: 600px;
+  width: 300px;
 }
 
 .cards img {
@@ -361,8 +356,8 @@ body {
 
 .container-title {
   position: absolute;
-  top: 30%;
-  left: 45%;
+  top: 34%;
+  left: 40%;
   z-index: 1;
 }
 @media screen and (max-width: 690px) {
@@ -373,14 +368,14 @@ body {
 
 .container-title h1 {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 3rem;
   color: rgb(255, 255, 255);
   cursor: pointer;
 }
 @media screen and (max-width: 1024px) {
   .container-title h1 {
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 2rem;
     color: rgb(255, 255, 255);
   }
 }

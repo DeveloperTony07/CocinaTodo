@@ -4,19 +4,21 @@
 
 .flex-container-card{
     @include mixins.set-background-color(vars.$clr-light-red);
-    margin: 50px 50px 50px 50px;
+    margin: 50px 0px 50px 0px;
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
+    //align-items: center;
+    //justify-content: center;
 
 }
 
 .cards{
-    margin: 1rem;
+    //margin: 1rem;
+    margin-top: 25px;
     @include mixins.set-background-color(vars.$clr-cream);
     padding: 0;
     height: 600px;
+    width: 300px;
 }
 
 .cards img{

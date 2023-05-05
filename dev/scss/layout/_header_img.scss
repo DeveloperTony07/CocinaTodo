@@ -16,8 +16,8 @@
 
 .container-title {
     position: absolute;
-    top: 30%;
-    left: 45%;
+    top: 34%;
+    left: 40%;
     z-index: 1;
     @media screen and (max-width: 690px){
         display: none;
@@ -25,10 +25,10 @@
 }
 
 .container-title h1 {
-    @include mixins.set-font(vars.$fw-semibold, vars.$fs-lg, vars.$clr-white);
+    @include mixins.set-font(vars.$fw-semibold, vars.$fs-xlg, vars.$clr-white);
     cursor: pointer;
     @media screen and (max-width: 1024px){
-        @include mixins.set-font(vars.$fw-semibold, vars.$fs-med, vars.$clr-white);
+        @include mixins.set-font(vars.$fw-semibold, vars.$fs-lg, vars.$clr-white);
     }
 }
 
