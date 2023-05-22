@@ -1,0 +1,40 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+@use '../abstracts/media-queries';
+
+.container-img-header {
+    max-width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.container-img-header img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.container-title {
+    position: absolute;
+    top: 34%;
+    left: 40%;
+    z-index: 1;
+    @media screen and (max-width: 690px){
+        display: none;
+    }
+    @media screen and (max-width: 1024px){
+        left: 34%;
+    }
+}
+
+.container-title h1 {
+    @include mixins.set-font(vars.$fw-semibold, vars.$fs-xlg, vars.$clr-white);
+    cursor: pointer;
+    @media screen and (max-width: 1024px){
+        @include mixins.set-font(vars.$fw-semibold, vars.$fs-lg, vars.$clr-white);
+    }
+}
+
+.container-title h1:hover{
+    transform: scale(1.09);
+}

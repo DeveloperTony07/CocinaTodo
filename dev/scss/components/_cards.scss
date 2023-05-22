@@ -1,0 +1,36 @@
+@use '../abstracts/media-queries';
+@use '../abstracts/mixins';
+@use '../abstracts/vars';
+
+.flex-container-card{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.cards{
+    margin: 1rem;
+    margin-top: 25px;
+    @include mixins.set-background-color(vars.$clr-cream);
+    height: auto;
+    width: 300px;
+}
+
+.cards img{
+    height: 300px;
+    border-radius: 5px 5px 0 0;
+}
+
+.cards .cards-body{
+    padding: 15px;
+    border-radius: 5px 5px 0 0;
+}
+
+.flex-buttons{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between
+}

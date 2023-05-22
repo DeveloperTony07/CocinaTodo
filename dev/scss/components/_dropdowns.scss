@@ -1,0 +1,30 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+@use '../abstracts/media-queries';
+
+.dropdowns {
+    background-color: transparent;
+}
+
+.dropdowns select {
+    padding: 7.5px 0px 7.5px 0px;
+    width: 300px;
+    text-align: center;
+    margin-right: 30px;
+    border: none;
+    border-radius: 5px;
+    @include mixins.set-border(3px, vars.$clr-red);
+    @include mixins.set-font(vars.$fw-regular, vars.$fs-med, vars.$clr-red);
+
+    @media screen and (max-width: 1485px) {
+        margin-top: 25px;
+        width: 630px;
+    }
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        margin-top: 25px;
+        width: 300px;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+}

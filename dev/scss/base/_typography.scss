@@ -1,0 +1,43 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+@use '../abstracts/media-queries';
+
+
+
+/* Texto de los cards */
+.txt-recipe-name-card{
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-xmed, vars.$clr-light-dark);
+    //justify-content: center;
+    text-align: center;
+}
+.txt-content-card{
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-med, vars.$clr-light-dark);
+}
+.txt-content-card span{
+    @include mixins.set-font(vars.$fw-regular, vars.$fs-med, vars.$clr-light-dark);
+}
+
+.txt-num-like{
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-xxmed, vars.$clr-light-dark);
+    margin-top: 1rem;
+    margin-left: -5rem;
+}
+/* Texto de los cards */
+
+/* Text container-search*/
+.txt-filters{
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-xmed, vars.$clr-red);
+}
+
+.txt-filters span{
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-xmed, vars.$clr-dark);
+}
+
+.ml-filters{
+    padding-left: 13rem;
+    @media screen and (max-width: 1485px){
+        padding-left: 0rem;
+    }
+}
+/* Text container-search*/
+

@@ -1,0 +1,160 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins.scss';
+@use '../abstracts/media-queries';
+
+
+// Container class "header"
+.header {
+    @include mixins.set-background-color(vars.$clr-red);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px 25px 50px;
+}
+
+// All "a" tags of class "header"
+.header a {
+    text-decoration: none;
+}
+
+// Class "logo" 
+.header .logo {
+    cursor: pointer;
+}
+
+// Scale logo size
+.header .logo img {
+    height: 65px;
+    width: auto;
+}
+
+// Scale image size when cursor is on top
+.header .logo img:hover {
+    transform: scale(1.09);
+}
+
+// Class located in <ul> tag
+.header .nav-links {
+    list-style: none;
+}
+
+// 
+.header .nav-links li {
+    display: inline-block;
+}
+
+.header .nav-links li:hover {
+    transform: scale(1.1);
+}
+
+.header .nav-links a {
+    margin: 0 0 0 30px;
+}
+
+.btn-nav-menu {
+    display: none;
+}
+
+.header .btn-nav-menu button {
+    @include mixins.set-font(vars.$fw-semibold, vars.$fs-med, vars.$clr-red);
+    @include mixins.set-background-color(vars.$clr-white);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.header .btn-nav-menu button:hover {
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-med, vars.$clr-dark);
+    transform: scale(1.1);
+}
+
+
+.nav-txt {
+    @include mixins.set-font(vars.$fw-regular, vars.$fs-med, vars.$clr-white);
+    transition: 0.5s ease;
+}
+
+.nav-txt:hover {
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-med, vars.$clr-dark);
+    //padding: 1rem;
+    //text-shadow: 0px 0px 20px vars.$clr-light-dark;
+}
+
+
+@media screen and (max-width: 690px) {
+    .nav-links {
+        display: none;
+    }
+
+    .btn-nav-menu {
+        display: inherit;
+    }
+}
+
+
+// Pading de los header
+@media screen and (max-width: 800px) {
+    .header {
+        padding: 25px 30px 25px 30px;
+    }
+}
+
+
+
+
+/* Nav */
+.header .overlay {
+    height: 250px;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    @include mixins.set-background-color(vars.$clr-red);
+    overflow: hidden;
+    transition: all 0.3 ease 0s;
+}
+
+.header .overlay .overlay-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    padding: 25px;
+}
+
+.header .overlay .overlay-content li {
+    list-style: none;
+}
+
+.header .overlay a {
+    padding: 15px;
+    display: block;
+    transition: all 0.3 ease 0s;
+    @include mixins.set-font(vars.$fw-regular, vars.$fs-med, vars.$clr-white);
+}
+
+.header .overlay a:hover {
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-med, vars.$clr-dark);
+    transform: scale(1.1);
+}
+
+.header .overlay .close {
+    position: absolute;
+    //margin: 0px 50px 0 50px;
+    top: 20px;
+    right: 45px;
+    font-size: 40px;
+}
+
+.header .overlay .close:hover {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 40px;
+}
+
+/* Nav */

@@ -1,0 +1,19 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+@use '../abstracts/media-queries';
+
+/* Texto Modal */
+.txt-modal-name{
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-xmed, vars.$clr-dark);
+}
+
+.txt-modal-content{
+    @include mixins.set-font(vars.$fw-semibold, vars.$fs-med, vars.$clr-dark);
+}
+
+.txt-modal-content span{
+    @include mixins.set-font(vars.$fw-regular, vars.$fs-med, vars.$clr-dark);
+}
+
+/* Texto Modal */
+

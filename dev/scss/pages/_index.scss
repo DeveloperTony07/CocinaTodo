@@ -1,0 +1,56 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+@use '../abstracts/media-queries';
+
+
+/* Container-search */
+.container-search{
+    margin: 20px 0px 0px 0px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    
+    @include media-queries.respond-to(media-queries.$phone){
+        margin: 50px 0px 0px 0px;
+    }
+
+    @media screen and (max-width: 1485px) {
+        flex-flow: column wrap;
+    }
+}
+
+.m-basic{
+    margin-left: 6.5rem;
+    margin-top: 1.5rem;
+}
+
+.m-basic-2{
+    margin-left: 6.5rem;
+    margin-top: 4rem;
+}
+
+.container-row{
+    flex-flow: row wrap;
+    display: flex;
+
+    @media screen and (max-width: 1485px){
+        flex-flow: column wrap;
+    }
+    @include media-queries.respond-to(media-queries.$phone){
+        margin-left: 2rem;
+    }
+}
+
+.m-negative-1{
+    margin-left: 0rem;
+    @include media-queries.respond-to(media-queries.$phone){
+        margin-left: -4.5rem;
+    }
+}
+/* Container-search */
+
+
+
+
+
