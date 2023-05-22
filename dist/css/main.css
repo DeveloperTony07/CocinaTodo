@@ -515,4 +515,18 @@ body {
   }
 }
 
+.ml-toprecipes {
+  margin-left: 0rem;
+}
+@media screen and (max-width: 1485px) {
+  .ml-toprecipes {
+    margin-left: 8rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .ml-toprecipes {
+    margin-left: 3rem;
+  }
+}
+
 /* Container-search */

@@ -48,6 +48,16 @@
         margin-left: -4.5rem;
     }
 }
+
+.ml-toprecipes{
+    margin-left: 0rem;
+    @media screen and (max-width: 1485px){
+        margin-left: 8rem;
+    }
+    @include media-queries.respond-to(media-queries.$phone){
+        margin-left: 3rem;
+    }
+}
 /* Container-search */
 
 
