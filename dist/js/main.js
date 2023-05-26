@@ -30,7 +30,9 @@ const app = Vue.createApp({
                     id: 8, image: "./imgs/recipes/Perfect Bacon.jpg", name: "Bacon", category: "Cena", ocasions: "Semana Santa", level: "Medio", likes: 0
                 },
 
-            ]
+            ],
+
+           // img:"./imgs/recipes/Perfect Bacon.jpg"
         }
     },
     methods: {

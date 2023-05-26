@@ -16,6 +16,9 @@
     @include mixins.set-background-color(vars.$clr-cream);
     height: auto;
     width: 300px;
+    @include media-queries.respond-to(media-queries.$phone){
+        width: 380px;
+    }
 }
 
 .cards img{
@@ -34,3 +37,4 @@
     align-items: center;
     justify-content: space-between
 }
+

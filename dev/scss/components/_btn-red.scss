@@ -16,3 +16,29 @@
     text-decoration: none;
     @include mixins.set-font(vars.$fw-semibold, vars.$fs-med, vars.$clr-white);
 }
+
+
+
+.btn-see-more{
+    @include mixins.set-background-color(vars.$clr-red);
+    border: none;
+    @include mixins.set-font(vars.$fw-semibold, vars.$fs-xmed, vars.$clr-white);
+    padding: 7.5px 100px 7.5px 100px;
+    border-radius: 3px;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    margin-left: 41%;
+    @media screen and (max-width: 1485px) {
+        margin-left: 33%;
+    }
+    @include media-queries.respond-to(media-queries.$phone) {
+        margin-left: 23px;
+        width: 370px;
+    }
+}
+
+.btn-like{
+    height: 40px;
+}
+
+

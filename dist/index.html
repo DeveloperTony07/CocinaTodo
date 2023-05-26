@@ -107,10 +107,10 @@
             <h2 class="txt-filters m-negative-1">100 <span>Resultados</span></h2>
         </div>
         <!-- Dropdowns -->
-            <!-- End Secction filters-->
+        <!-- End Secction filters-->
 
-            <!-- Stard Section Carsds -->
-            <section>
+        <!-- Stard Section Carsds -->
+        <section>
             <div class="flex-container-card" class="col-sm-3">
                 <div v-for="(item,index) in recipes">
                     <div class="cards">
@@ -119,8 +119,8 @@
                             <h5 class="txt-recipe-name-card">{{item.name}}</h5>
                             <p class="txt-content-card ma-t-1">Categoria: <span>{{item.category}}</span></p>
                             <p class="txt-content-card">Ocación: <span>{{item.ocasions}}</span></p>
+                            <p class="txt-content-card">Didicultad: <span>{{item.level}}</span></p>
                             <div>
-                                <p class="txt-content-card">Didicultad: <span>{{item.level}}</span></p>
                                 <div class="flex-buttons">
                                     <button class="btn btn-danger" v-on:click="onClickLike(index)">Like</button>
                                     <p class="txt-num-like">{{item.likes}}</p>
@@ -163,8 +163,60 @@
         <!-- Modal -->
         <!-- End Section Cards -->
 
+        <button class="btn-see-more">Ver Más</button>
+
+        <!-- top 10 recipes-->
         <h2 class="txt-filters m-basic ml-toprecipes">10 <span>Mejores Recetas</span></h2>
 
+        <div class="flex-container-card-top" class="col-sm-3">
+            <div v-for="(item,index) in recipes">
+
+                <div class="cards-top">
+                    <div class="img-top">
+                        <img v-bind:src="item.image" class="card-img-top" alt="receta">
+                    </div>
+                    <div class="margin-body">
+                        <div>
+                            <h5 class="txt-name-top">{{item.name}}</h5>
+                        </div>
+                        <div>
+                            <p class="txt-content-card ma-t-1">Categoria: <span>{{item.category}}</span></p>
+                            <p class="txt-content-card">Ocación: <span>{{item.ocasions}}</span></p>
+                            <p class="txt-content-card">Didicultad: <span>{{item.level}}</span></p>
+                        </div>
+                        <div class="flex-btn-like">
+                            <button class="btn btn-danger btn-like" v-on:click="onClickLike(index)">Like</button>
+                            <p class="txt-like">{{item.likes}}</p>
+                        </div>
+                        <div>
+                            <button class="btn-red"><a href="#">Ver Receta</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- top 10 recipes-->
+
+        <!-- Foother -->
+        <div class="line-red"></div>
+
+        <div class="content-foother">
+            <img src="svgs/LogoDark.svg" alt="logo">
+            <div class="ml-1-foother">
+                <h2 class="title-foother">Descubre Recetas Por</h2>
+                <pc class="txt-foother">Categoria</p>
+                <pc class="txt-foother">Ocaciones</p>
+                <pc class="txt-foother">Dificultad</p>
+            </div>
+            <div class="ml-1-foother">
+                <h2 class="title-foother">Legales</h2>
+                <pc class="txt-foother">Aviso de Privacidad</p>
+                <pc class="txt-foother">Termino de servicio</p>
+            </div>
+        </div>
+        <div class="line-red2"></div>
+        <!-- End Foother -->
 
     </section>
 

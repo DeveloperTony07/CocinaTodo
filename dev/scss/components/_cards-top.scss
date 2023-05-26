@@ -1,0 +1,61 @@
+@use '../abstracts/media-queries';
+@use '../abstracts/mixins';
+@use '../abstracts/vars';
+
+.flex-container-card-top {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards-top {
+    margin: 1rem;
+    @include mixins.set-background-color(vars.$clr-cream);
+    height: auto;
+    width: 620px;
+    display: flex;
+    border-radius: 5px;
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        width: 380px;
+    }
+}
+
+.img-top {
+    height: 300px;
+}
+
+.cards-top img {
+    height: 308px;
+    width: 250px;
+    border-radius: 5px 0 0 5px;
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        width: 150px;
+    }
+}
+
+.margin-body {
+    margin: 1rem;
+    width: 100%
+}
+
+.txt-name-top {
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-xmed, vars.$clr-light-dark);
+    margin-bottom: 1rem;
+    text-align: center;
+
+}
+
+
+.flex-btn-like {
+    display: flex;
+}
+
+.txt-like {
+    padding-left: 10%;
+    
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-xxmed, vars.$clr-light-dark);
+}
+

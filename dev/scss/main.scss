@@ -11,12 +11,14 @@
 @use "./components/search-bar";
 @use "./components/dropdowns";
 @use "./components/cards";
+@use "./components/cards-top";
 @use "./components/btn-red";
 @use "./components/modal";
 
 // layout
 @use "./layout/navbar";
 @use "./layout/header_img";
+@use "./layout/foother";
 
 // pages
 @use "./pages/index";
