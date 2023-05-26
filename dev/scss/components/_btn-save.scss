@@ -1,0 +1,38 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+@use '../abstracts/media-queries';
+
+.btn-save{
+    background-color: white;
+    position: absolute;
+    margin-left: -5.5rem;
+    border-radius: 10rem;
+    border: none;
+    height: 3rem;
+    width: 3rem;
+    margin: 0.5rem 0rem 0rem -3.5rem ;
+}
+
+.btn-save img{
+    height: 30px;
+    margin-left: -1px;
+}
+
+.btn-save-top{
+    background-color: white;
+    position: absolute;
+    margin-left: -5.5rem;
+    border-radius: 10rem;
+    border: none;
+    height: 3rem;
+    width: 3rem;
+    margin: 0.5rem 0rem 0rem -3.5rem ;
+}
+
+.btn-save-top img{
+    height: 30px;
+    margin-left: -6.8rem;
+    @include media-queries.respond-to(media-queries.$phone){
+        margin-left: -3.7rem;
+    }
+}

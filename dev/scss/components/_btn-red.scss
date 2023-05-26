@@ -41,4 +41,11 @@
     height: 40px;
 }
 
+.btn-movil{
+    @include media-queries.respond-to(media-queries.$phone) {
+        width: 370px;
+        margin-left: -10rem;
+    }
+}
+
 

@@ -33,6 +33,7 @@
 
     @include media-queries.respond-to(media-queries.$phone) {
         width: 150px;
+        height: 230px;
     }
 }
 
@@ -44,8 +45,10 @@
 .txt-name-top {
     @include mixins.set-font(vars.$fw-bold, vars.$fs-xmed, vars.$clr-light-dark);
     margin-bottom: 1rem;
-    text-align: center;
-
+    text-align: start;
+    @include media-queries.respond-to(media-queries.$phone){
+        @include mixins.set-font(vars.$fw-bold, vars.$fs-med, vars.$clr-light-dark);
+    }
 }
 
 
@@ -53,9 +56,4 @@
     display: flex;
 }
 
-.txt-like {
-    padding-left: 10%;
-    
-    @include mixins.set-font(vars.$fw-bold, vars.$fs-xxmed, vars.$clr-light-dark);
-}
 

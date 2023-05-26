@@ -3,11 +3,12 @@
   font-weight: 700;
   font-size: 1.25rem;
   color: rgba(1, 10, 38, 0.7);
-  text-align: center;
+  text-align: start;
+  margin-bottom: 2rem;
 }
 
 .txt-content-card {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1rem;
   color: rgba(1, 10, 38, 0.7);
 }
@@ -20,10 +21,28 @@
 
 .txt-num-like {
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: rgba(1, 10, 38, 0.7);
-  margin-top: 1rem;
-  margin-left: -5rem;
+  margin-top: 0.8rem;
+  margin-right: 13rem;
+}
+@media only screen and (max-width: 500px) {
+  .txt-num-like {
+    margin-right: 18rem;
+  }
+}
+
+.txt-num-like2 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: rgba(1, 10, 38, 0.7);
+  margin-top: 0.6rem;
+  margin-left: 1rem;
+}
+@media only screen and (max-width: 500px) {
+  .txt-num-like2 {
+    margin-right: 15.5rem;
+  }
 }
 
 /* Texto de los cards */
@@ -238,6 +257,7 @@ body {
 @media only screen and (max-width: 500px) {
   .cards-top img {
     width: 150px;
+    height: 230px;
   }
 }
 
@@ -251,20 +271,20 @@ body {
   font-size: 1.25rem;
   color: rgba(1, 10, 38, 0.7);
   margin-bottom: 1rem;
-  text-align: center;
+  text-align: start;
+}
+@media only screen and (max-width: 500px) {
+  .txt-name-top {
+    font-weight: 700;
+    font-size: 1rem;
+    color: rgba(1, 10, 38, 0.7);
+  }
 }
 
 .flex-btn-like {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.txt-like {
-  padding-left: 10%;
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: rgba(1, 10, 38, 0.7);
 }
 
 .btn-red {
@@ -312,6 +332,13 @@ body {
   height: 40px;
 }
 
+@media only screen and (max-width: 500px) {
+  .btn-movil {
+    width: 370px;
+    margin-left: -10rem;
+  }
+}
+
 /* Texto Modal */
 .txt-modal-name {
   font-weight: 700;
@@ -332,6 +359,53 @@ body {
 }
 
 /* Texto Modal */
+.btn-save {
+  background-color: white;
+  position: absolute;
+  margin-left: -5.5rem;
+  border-radius: 10rem;
+  border: none;
+  height: 3rem;
+  width: 3rem;
+  margin: 0.5rem 0rem 0rem -3.5rem;
+}
+
+.btn-save img {
+  height: 30px;
+  margin-left: -1px;
+}
+
+.btn-save-top {
+  background-color: white;
+  position: absolute;
+  margin-left: -5.5rem;
+  border-radius: 10rem;
+  border: none;
+  height: 3rem;
+  width: 3rem;
+  margin: 0.5rem 0rem 0rem -3.5rem;
+}
+
+.btn-save-top img {
+  height: 30px;
+  margin-left: -6.8rem;
+}
+@media only screen and (max-width: 500px) {
+  .btn-save-top img {
+    margin-left: -3.7rem;
+  }
+}
+
+.btn-heard {
+  background: none;
+  border: none;
+}
+
+.btn-heard img {
+  width: 30px;
+  height: 30px;
+}
+
 .header {
   background-color: rgb(242, 61, 76);
   display: -webkit-box;

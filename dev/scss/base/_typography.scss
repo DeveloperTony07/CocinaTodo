@@ -5,39 +5,58 @@
 
 
 /* Texto de los cards */
-.txt-recipe-name-card{
+.txt-recipe-name-card {
     @include mixins.set-font(vars.$fw-bold, vars.$fs-xmed, vars.$clr-light-dark);
     //justify-content: center;
-    text-align: center;
+    text-align: start;
+    margin-bottom: 2rem;
 }
-.txt-content-card{
-    @include mixins.set-font(vars.$fw-bold, vars.$fs-med, vars.$clr-light-dark);
+
+.txt-content-card {
+    @include mixins.set-font(vars.$fw-semibold, vars.$fs-med, vars.$clr-light-dark);
 }
-.txt-content-card span{
+
+.txt-content-card span {
     @include mixins.set-font(vars.$fw-regular, vars.$fs-med, vars.$clr-light-dark);
 }
 
-.txt-num-like{
-    @include mixins.set-font(vars.$fw-bold, vars.$fs-xxmed, vars.$clr-light-dark);
-    margin-top: 1rem;
-    margin-left: -5rem;
+.txt-num-like {
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-xmed, vars.$clr-light-dark);
+    margin-top: 0.8rem;
+    margin-right: 13rem;
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        margin-right: 18rem;
+    }
 }
+
+.txt-num-like2{
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-xmed, vars.$clr-light-dark);
+    margin-top: 0.6rem;
+    margin-left: 1rem;
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        margin-right: 15.5rem;
+    }
+}
+
 /* Texto de los cards */
 
 /* Text container-search*/
-.txt-filters{
+.txt-filters {
     @include mixins.set-font(vars.$fw-bold, vars.$fs-xmed, vars.$clr-red);
 }
 
-.txt-filters span{
+.txt-filters span {
     @include mixins.set-font(vars.$fw-bold, vars.$fs-xmed, vars.$clr-dark);
 }
 
-.ml-filters{
+.ml-filters {
     padding-left: 13rem;
-    @media screen and (max-width: 1485px){
+
+    @media screen and (max-width: 1485px) {
         padding-left: 0rem;
     }
 }
-/* Text container-search*/
 
+/* Text container-search*/

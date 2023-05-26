@@ -114,7 +114,10 @@
             <div class="flex-container-card" class="col-sm-3">
                 <div v-for="(item,index) in recipes">
                     <div class="cards">
-                        <img v-bind:src="item.image" class="card-img-top" alt="receta">
+                        <div>
+                            <img v-bind:src="item.image" class="card-img-top" alt="receta">
+                                <button class="btn-save"><img src="svgs/bookmark_add.svg" alt="add"></button>
+                        </div>
                         <div class="cards-body">
                             <h5 class="txt-recipe-name-card">{{item.name}}</h5>
                             <p class="txt-content-card ma-t-1">Categoria: <span>{{item.category}}</span></p>
@@ -122,9 +125,8 @@
                             <p class="txt-content-card">Didicultad: <span>{{item.level}}</span></p>
                             <div>
                                 <div class="flex-buttons">
-                                    <button class="btn btn-danger" v-on:click="onClickLike(index)">Like</button>
+                                    <button class="btn-heard" v-on:click="onClickLike(index)"><img src="svgs/heard-1.svg" alt="heard"></button>
                                     <p class="txt-num-like">{{item.likes}}</p>
-                                    <button class="btn btn-danger">Guardar</button>
                                 </div>
                             </div>
 
@@ -174,6 +176,7 @@
                 <div class="cards-top">
                     <div class="img-top">
                         <img v-bind:src="item.image" class="card-img-top" alt="receta">
+                        <button class="btn-save-top"><img src="svgs/bookmark_add.svg" alt="add"></button>
                     </div>
                     <div class="margin-body">
                         <div>
@@ -185,11 +188,11 @@
                             <p class="txt-content-card">Didicultad: <span>{{item.level}}</span></p>
                         </div>
                         <div class="flex-btn-like">
-                            <button class="btn btn-danger btn-like" v-on:click="onClickLike(index)">Like</button>
-                            <p class="txt-like">{{item.likes}}</p>
+                            <button class="btn-heard" v-on:click="onClickLike(index)"><img src="svgs/heard-1.svg" alt="heard"></button>
+                            <p class="txt-num-like2">{{item.likes}}</p>
                         </div>
                         <div>
-                            <button class="btn-red"><a href="#">Ver Receta</a></button>
+                            <button class="btn-red btn-movil"><a href="#">Ver Receta</a></button>
                         </div>
                     </div>
                 </div>
