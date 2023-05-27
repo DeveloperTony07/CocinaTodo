@@ -24,99 +24,22 @@
     <section id="app">
 
         <!-- Open Header -->
-        <header class="header">
-            <div class="logo">
-                <img v-bind:src="logoWhite" alt="logo">
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a class="nav-txt" href="#">Inicio</a></li>
-                    <li><a class="nav-txt" href="#">Subir Receta</a></li>
-                    <li><a class="nav-txt" href="#">Recetas Guardadas</a></li>
-                    <li><a class="nav-txt" href="#">Perfil</a></li>
-                </ul>
-            </nav>
-
-            <a onclick="openNav()" class="btn-nav-menu" href="#"><button>Menu</button></a>
-
-            <div class="overlay" id="mobile-menu">
-                <a class="close" onclick="closeNav()" href="#">&times;</a>
-                <div class="overlay-content">
-                    <li><a class="nav-txt" href="#">Inicio</a></li>
-                    <li><a class="nav-txt" href="#">Subir Receta</a></li>
-                    <li><a class="nav-txt" href="#">Recetas Guardadas</a></li>
-                    <li><a class="nav-txt" href="#">Perfil</a></li>
-                </div>
-            </div>
-        </header>
+        <header-component></header-component>
         <!-- Close Header -->
-        <!-- Start Img -->
-        <div class="container-img-header">
-            <img v-bind:src="imgHeader" alt="header">
-            <div class="container-title">
-                <h1>Descubre todo<br>tipo de Recetas</h1>
-            </div>
-        </div>
-        <!-- End img -->
 
         <!-- Start secction filters -->
-        <div class="m-basic-2 container-row">
-            <h2 class="txt-filters">Buscar <span>Recetas</span></h2>
-            <h2 class="txt-filters ml-filters">Elegir <span>Recetas por</span></h2>
-        </div>
-        <section class="container-search">
-            <!-- Search -->
-            <div class="search-bar">
-                <input type="text" placeholder="Buscar">
-            </div>
-            <!-- Search-->
-            <!-- Dropdowns -->
-            <div class="dropdowns  ml-30">
-                <select name="ocaciones" id="Categoria">
-                    <option value="Categoria">Categoria</option>
-                    <option value="Desayunos">Cumpleaños</option>
-                    <option value="Bebidas">Día del padre</option>
-                    <option value="Entradas">Día de la madre</option>
-                    <option value="Almuerzos">Día del niño</option>
-                    <option value="Postres">Navidad</option>
-                    <option value="Sopas">Semana Santa</option>
-                </select>
-            </div>
-            <div class="dropdowns  ml-30">
-                <select name="ocaciones" id="ocaciones">
-                    <option value="Ocupaciones">Ocaciones</option>
-                    <option value="Cumpleaños">Cumpleaños</option>
-                    <option value="Día del Padre">Día del padre</option>
-                    <option value="Día de la Madre">Día de la madre</option>
-                    <option value="Día del Niño">Día del niño</option>
-                    <option value="Navidad">Navidad</option>
-                    <option value="Semana Santa">Semana Santa</option>
-                    <option value="Verano">Verano</option>
-                </select>
-            </div>
-            <div class="dropdowns ml-30">
-                <select name="ocaciones" id="Dificultad">
-                    <option value="Nivel">Nivel</option>
-                    <option value="Facil">Fácil</option>
-                    <option value="Medio">Medio</option>
-                    <option value="Dificil">Dificil</option>
-                </select>
-            </div>
-        </section>
-        <div class="m-basic">
-            <h2 class="txt-filters m-negative-1">100 <span>Resultados</span></h2>
-        </div>
-        <!-- Dropdowns -->
+        <filters-component></filters-component>
         <!-- End Secction filters-->
 
         <!-- Stard Section Carsds -->
         <section>
             <div class="flex-container-card" class="col-sm-3">
                 <div v-for="(item,index) in recipes">
+
                     <div class="cards">
                         <div>
                             <img v-bind:src="item.image" class="card-img-top" alt="receta">
-                                <button class="btn-save"><img src="svgs/bookmark_add.svg" alt="add"></button>
+                            <button class="btn-save"><img src="svgs/bookmark_add.svg" alt="add"></button>
                         </div>
                         <div class="cards-body">
                             <h5 class="txt-recipe-name-card">{{item.name}}</h5>
@@ -125,7 +48,8 @@
                             <p class="txt-content-card">Didicultad: <span>{{item.level}}</span></p>
                             <div>
                                 <div class="flex-buttons">
-                                    <button class="btn-heard" v-on:click="onClickLike(index)"><img src="svgs/heard-1.svg" alt="heard"></button>
+                                    <button class="btn-heard" v-on:click="onClickLike(index)"><img
+                                            src="svgs/heard-1.svg" alt="heard"></button>
                                     <p class="txt-num-like">{{item.likes}}</p>
                                 </div>
                             </div>
@@ -133,37 +57,47 @@
                             <button class="btn-red" v-on:click="onClickViewRecipe(index)" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal"><a href="#">VER RECETA</a></button>
                         </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class=" txt-modal-name fs-5" id="staticBackdropLabel">
+                                            {{recipes[selectedIndex].name}}
+                                        </h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body txt-modal-content">
+                                        <img class="d-block m-auto img-fluid" v-bind:src="recipes[selectedIndex].image"
+                                            alt="{{ recipes[selectedIndex].name }}">
+                                        <p class="txt-center pt-3">Categoria:
+                                            <span>{{recipes[selectedIndex].category}}</span>
+                                        </p>
+                                        <p class="txt-center pt-3">Ocaciones:
+                                            <span>{{recipes[selectedIndex].ocasions}}</span>
+                                        </p>
+                                        <p class="txt-center pt-3">Nivel: <span>{{recipes[selectedIndex].level}}</span>
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            v-on:click="onClickPrev()">Prev</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            v-on:click="onClickPrev()">Next</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class=" txt-modal-name fs-5" id="staticBackdropLabel">{{recipes[selectedIndex].name}}
-                            </h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body txt-modal-content">
-                            <img class="d-block m-auto img-fluid" v-bind:src="recipes[selectedIndex].image"
-                                alt="{{ recipes[selectedIndex].name }}">
-                            <p class="txt-center pt-3">Categoria: <span>{{recipes[selectedIndex].category}}</span></p>
-                            <p class="txt-center pt-3">Ocaciones: <span>{{recipes[selectedIndex].ocasions}}</span></p>
-                            <p class="txt-center pt-3">Nivel: <span>{{recipes[selectedIndex].level}}</span></p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" v-on:click="onClickPrev()">Prev</button>
-                            <button type="button" class="btn btn-secondary" v-on:click="onClickPrev()">Next</button>
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
+                    <!-- Modal -->
                 </div>
             </div>
         </section>
-        <!-- Modal -->
-        <!-- End Section Cards -->
+        <!--End section Cards-->
 
         <button class="btn-see-more">Ver Más</button>
 
@@ -188,7 +122,8 @@
                             <p class="txt-content-card">Didicultad: <span>{{item.level}}</span></p>
                         </div>
                         <div class="flex-btn-like">
-                            <button class="btn-heard" v-on:click="onClickLike(index)"><img src="svgs/heard-1.svg" alt="heard"></button>
+                            <button class="btn-heard" v-on:click="onClickLike(index)"><img src="svgs/heard-1.svg"
+                                    alt="heard"></button>
                             <p class="txt-num-like2">{{item.likes}}</p>
                         </div>
                         <div>
@@ -202,23 +137,7 @@
         <!-- top 10 recipes-->
 
         <!-- Foother -->
-        <div class="line-red"></div>
-
-        <div class="content-foother">
-            <img src="svgs/LogoDark.svg" alt="logo">
-            <div class="ml-1-foother">
-                <h2 class="title-foother">Descubre Recetas Por</h2>
-                <pc class="txt-foother">Categoria</p>
-                <pc class="txt-foother">Ocaciones</p>
-                <pc class="txt-foother">Dificultad</p>
-            </div>
-            <div class="ml-1-foother">
-                <h2 class="title-foother">Legales</h2>
-                <pc class="txt-foother">Aviso de Privacidad</p>
-                <pc class="txt-foother">Termino de servicio</p>
-            </div>
-        </div>
-        <div class="line-red2"></div>
+        <footer-component></footer-component>
         <!-- End Foother -->
 
     </section>
@@ -231,9 +150,13 @@
     <!-- main script -->
     <script src="js/main.js"></script>
 
-    <!-- ComponentsJS 
-    <script src="js/components/RecepeCard.js"></script>
-    -->
+    <!-- ComponentsJS -->
+    <script src="js/components/Header.js"></script>
+    <script src="js/components/Filters.js"></script>
+    <script src="js/components/RecipeCard.js"></script>
+    <script src="js/components/footer.js"></script>
+
+
 
     <script>
         const mountedApp = app.mount("#app");

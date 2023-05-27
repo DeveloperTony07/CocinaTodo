@@ -16,11 +16,12 @@
 @use "./components/modal";
 @use "./components/btn-save";
 @use "./components/btn-heard";
+@use "./components/btn-white";
 
 // layout
 @use "./layout/navbar";
 @use "./layout/header_img";
-@use "./layout/foother";
+@use "./layout/footer";
 
 // pages
 @use "./pages/index";

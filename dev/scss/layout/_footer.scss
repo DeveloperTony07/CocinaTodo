@@ -1,0 +1,139 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+@use '../abstracts/media-queries';
+
+.content-footer {
+    margin: 0 122px;
+    display: flex;
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        margin: 0 30px;
+        display: block;
+    }
+}
+
+.content-footer img {
+    margin: auto;
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        margin: 1rem 8rem 1rem 8rem;
+    }
+}
+
+.body-footer {
+    display: flex;
+}
+
+.box-footer {
+    margin-left: 28rem;
+    padding: auto;
+    width: 13rem;
+
+    @media screen and (max-width: 1485px) {
+        margin-left: 8.2rem;
+        width: 10.5rem;
+    }
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        margin-left: auto;
+    }
+
+}
+
+.box-footer-two {
+    margin-left: 23.5rem;
+    padding: 0 auto;
+    width: 10rem;
+
+    @media screen and (max-width: 1485px) {
+        margin-left: 6rem;
+    }
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        margin-left: auto;
+    }
+}
+
+.line-red {
+    height: 3px;
+    background-color: vars.$clr-red;
+    margin: 2% 122px;
+    width: auto;
+    border-radius: 10px;
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        margin: 0 30px;
+    }
+}
+
+.line-red2 {
+    height: 4px;
+    background-color: vars.$clr-red;
+    margin: 1% 122px 2% 122px;
+    width: auto;
+    border-radius: 10px;
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        margin: 1% 30px 1rem 30px;
+    }
+}
+
+/* Tipography */
+.title-footer {
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-med, vars.$clr-red);
+    margin-bottom: 1rem;
+}
+
+.txt-footer {
+    @include mixins.set-font(vars.$fw-semibold, vars.$fs-med, vars.$clr-dark);
+    text-decoration: none;
+}
+
+.txt-footer-foot {
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-xsm, vars.$clr-dark);
+    margin: 0 0 2rem 7.6rem;
+
+    @media screen and (max-width: 1485px) {
+        @include mixins.set-font(vars.$fw-bold, vars.$fs-xxsm, vars.$clr-dark);
+    }
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        margin: -1rem 1rem 2rem 2rem;
+    }
+}
+
+
+/* Tipography */
+
+.div-footer-foot {
+    display: flex;
+
+    @media screen and (max-width: 1485px) {
+        margin: 2rem 0 1rem 0;
+    }
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        display: block;
+    }
+}
+
+.div-footer-foot img {
+    width: 50px;
+    margin-top: -15px;
+}
+
+.ml-ff-1 {
+    margin-left: 33rem;
+
+    @media screen and (max-width: 1485px) {
+        margin-left: 5rem;
+    }
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        margin-left: 7.5rem;
+    }
+}
+
+.mr-ff-1 {
+    margin-left: 1rem;
+}

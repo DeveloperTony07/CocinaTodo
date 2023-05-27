@@ -1,8 +1,6 @@
 const app = Vue.createApp({
     data(){
         return{
-            logoWhite: "./svgs/LogoWhite.svg",
-            imgHeader: "./imgs/header.jpg",
             selectedIndex: 0,
             recipes: [
                 {
@@ -24,15 +22,13 @@ const app = Vue.createApp({
                     id: 6, image: "./imgs/recipes/Maruchan.jpg", name: "Ramen", category: "Sopa", ocasions: "Semana Santa", level: "Medio", likes: 0
                 },
                 {
-                    id: 7, image: "./imgs/recipes/Papa rellena de papa.jpg", name: "Papa orneada", category: "Cena", ocasions: "Semana Santa", level: "Medio", likes: 0
+                    id: 7, image: "./imgs/recipes/Papa rellena de papa.jpg", name: "Papa horneada", category: "Cena", ocasions: "Semana Santa", level: "Medio", likes: 0
                 },
                 {
                     id: 8, image: "./imgs/recipes/Perfect Bacon.jpg", name: "Bacon", category: "Cena", ocasions: "Semana Santa", level: "Medio", likes: 0
                 },
 
             ],
-
-           // img:"./imgs/recipes/Perfect Bacon.jpg"
         }
     },
     methods: {
