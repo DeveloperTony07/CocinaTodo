@@ -35,68 +35,46 @@
         <section>
             <div class="flex-container-card" class="col-sm-3">
                 <div v-for="(item,index) in recipes">
-
-                    <div class="cards">
-                        <div>
-                            <img v-bind:src="item.image" class="card-img-top" alt="receta">
-                            <button class="btn-save"><img src="svgs/bookmark_add.svg" alt="add"></button>
-                        </div>
-                        <div class="cards-body">
-                            <h5 class="txt-recipe-name-card">{{item.name}}</h5>
-                            <p class="txt-content-card ma-t-1">Categoria: <span>{{item.category}}</span></p>
-                            <p class="txt-content-card">Ocación: <span>{{item.ocasions}}</span></p>
-                            <p class="txt-content-card">Didicultad: <span>{{item.level}}</span></p>
-                            <div>
-                                <div class="flex-buttons">
-                                    <button class="btn-heard" v-on:click="onClickLike(index)"><img
-                                            src="svgs/heard-1.svg" alt="heard"></button>
-                                    <p class="txt-num-like">{{item.likes}}</p>
-                                </div>
-                            </div>
-
-                            <button class="btn-red" v-on:click="onClickViewRecipe(index)" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal"><a href="#">VER RECETA</a></button>
-                        </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class=" txt-modal-name fs-5" id="staticBackdropLabel">
-                                            {{recipes[selectedIndex].name}}
-                                        </h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body txt-modal-content">
-                                        <img class="d-block m-auto img-fluid" v-bind:src="recipes[selectedIndex].image"
-                                            alt="{{ recipes[selectedIndex].name }}">
-                                        <p class="txt-center pt-3">Categoria:
-                                            <span>{{recipes[selectedIndex].category}}</span>
-                                        </p>
-                                        <p class="txt-center pt-3">Ocaciones:
-                                            <span>{{recipes[selectedIndex].ocasions}}</span>
-                                        </p>
-                                        <p class="txt-center pt-3">Nivel: <span>{{recipes[selectedIndex].level}}</span>
-                                        </p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            v-on:click="onClickPrev()">Prev</button>
-                                        <button type="button" class="btn btn-secondary"
-                                            v-on:click="onClickPrev()">Next</button>
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Modal -->
+                    <recipe-card :index="item.id" :image="item.image" :name="item.name" :category="item.category"
+                        :ocasions="item.ocasions" :level="item.level" :likes="item.likes"
+                        v-on:recipedetails="onClickViewRecipe" v-on:recipelike="onClickLike">
+                    </recipe-card>
                 </div>
             </div>
         </section>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class=" txt-modal-name fs-5" id="staticBackdropLabel">
+                            {{recipes[selectedIndex].name}}
+                        </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body txt-modal-content">
+                        <img class="d-block m-auto img-fluid" v-bind:src="recipes[selectedIndex].image"
+                            alt="{{ recipes[selectedIndex].name }}">
+                        <p class="txt-center pt-3">Categoria:
+                            <span>{{recipes[selectedIndex].category}}</span>
+                        </p>
+                        <p class="txt-center pt-3">Ocaciones:
+                            <span>{{recipes[selectedIndex].ocasions}}</span>
+                        </p>
+                        <p class="txt-center pt-3">Nivel: <span>{{recipes[selectedIndex].level}}</span>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" v-on:click="onClickPrev()">Prev</button>
+                        <button type="button" class="btn btn-secondary" v-on:click="onClickPrev()">Next</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+
         <!--End section Cards-->
 
         <button class="btn-see-more">Ver Más</button>
@@ -141,10 +119,10 @@
         <!-- End Foother -->
 
     </section>
-
+    <!-- Axios - API recipes-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- Custom events - components -->
     <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
-
     <!-- VueJS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- main script -->
@@ -155,8 +133,6 @@
     <script src="js/components/Filters.js"></script>
     <script src="js/components/RecipeCard.js"></script>
     <script src="js/components/footer.js"></script>
-
-
 
     <script>
         const mountedApp = app.mount("#app");
@@ -171,3 +147,34 @@
 </body>
 
 </html>
+
+<!--
+                    <recipe-card :index="item.id" :image="item.image" :name="item.name" :category="item.category"
+                        :ocasions="item.ocasions" :level="item.level" :likes="item.likes">
+                    </recipe-card>
+                    -->
+
+<!--
+                    <div class="cards">
+                        <div>
+                            <img v-bind:src="item.image" class="card-img-top" alt="receta">
+                            <button class="btn-save"><img src="svgs/bookmark_add.svg" alt="add"></button>
+                        </div>
+                        <div class="cards-body">
+                            <h5 class="txt-recipe-name-card">{{item.name}}</h5>
+                            <p class="txt-content-card ma-t-1">Categoria: <span>{{item.category}}</span></p>
+                            <p class="txt-content-card">Ocación: <span>{{item.ocasions}}</span></p>
+                            <p class="txt-content-card">Didicultad: <span>{{item.level}}</span></p>
+                            <div>
+                                <div class="flex-buttons">
+                                    <button class="btn-heard" v-on:click="onClickLike(index)"><img
+                                            src="svgs/heard-1.svg" alt="heard"></button>
+                                    <p class="txt-num-like">{{item.likes}}</p>
+                                </div>
+                            </div>
+
+                            <button class="btn-red" v-on:click="onClickViewRecipe(index)" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal"><a href="#">VER RECETA</a></button>
+                        </div>
+                    </div>
+                    -->
