@@ -35,14 +35,14 @@
         <section>
             <div class="flex-container-card" class="col-sm-3">
                 <div v-for="(item,index) in recipes">
-                    <recipe-card :index="item.id" :image="item.image" :name="item.name" :category="item.category"
-                        :ocasions="item.ocasions" :level="item.level" :likes="item.likes"
+                    <recipe-card :index="item.id" :image="item.image" :name="item.name"
                         v-on:recipedetails="onClickViewRecipe" v-on:recipelike="onClickLike">
                     </recipe-card>
                 </div>
             </div>
         </section>
 
+       <!-- <recipe-details :index=""></recipe-details> -->
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -73,7 +73,7 @@
                 </div>
             </div>
         </div>
-        <!-- Modal -->
+      <!-- Modal -->
 
         <!--End section Cards-->
 
@@ -131,6 +131,7 @@
     <!-- ComponentsJS -->
     <script src="js/components/Header.js"></script>
     <script src="js/components/Filters.js"></script>
+    <script src="js/components/RecipeCard.js"></script>
     <script src="js/components/RecipeCard.js"></script>
     <script src="js/components/footer.js"></script>
 
