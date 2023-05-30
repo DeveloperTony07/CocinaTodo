@@ -11,25 +11,25 @@ app.component('recipe-card', {
             type: String,
             default: "default name"
         },
-        /*
         category: {
             type: String,
-            default: "default category"
-        },
-        ocasions: {
-            type: String,
-            default: "default description"
-        },
-        level: {
-            type: String,
-            default: "default level"
-        },
-        likes: {
-            type: Number,
-            default: 0
         }
-        */
+        /*
+         ocasions: {
+             type: String,
+             default: "default description"
+         },
+         level: {
+             type: String,
+             default: "default level"
+         },
+         likes: {
+             type: Number,
+             default: 0
+         }
+         */
     },
+
     data() {
         return {
             idRecipes: "",
@@ -42,18 +42,19 @@ app.component('recipe-card', {
 
         }
     },
+
     mounted() {
 
-        if(this.index == 0){
+        if (this.index == 0) {
             this.idRecipes = "52959";
-        }else{
+        } else {
             this.idRecipes = this.index;
         }
 
         // Lookup full meal details by id
         axios({
             method: 'get',
-            url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i='+ this.idRecipes
+            url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + this.idRecipes
         })
             .then(
                 (response) => {
@@ -61,7 +62,7 @@ app.component('recipe-card', {
                     let items = response.data.meals[0];
                     console.log(items);
 
-                    this.category = items.strCategory;
+                    //this.category = items.strCategory;
                     this.area = items.strArea;
 
                     //Generate Random Levels
@@ -85,7 +86,7 @@ app.component('recipe-card', {
             this.$emit('recipelike', this.index);
             //this.recipe_likes++;
         }
-        
+
     },
     template:
         /*html*/

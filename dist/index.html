@@ -31,6 +31,7 @@
         <filters-component></filters-component>
         <!-- End Secction filters-->
 
+        
         <!-- Stard Section Carsds -->
         <section>
             <div class="flex-container-card" class="col-sm-3">
@@ -42,8 +43,11 @@
             </div>
         </section>
 
-       <!-- <recipe-details :index=""></recipe-details> -->
-        <!-- Modal -->
+        <!-- <recipe-details :index=""></recipe-details> -->
+        <recipe-details :name="recipe.name" :image="recipe.image" :id="recipe.id" :category="recipe.category"
+        :area="recipe.area"></recipe-details>
+
+        <!-- Modal 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -55,14 +59,14 @@
                     </div>
                     <div class="modal-body txt-modal-content">
                         <img class="d-block m-auto img-fluid" v-bind:src="recipes[selectedIndex].image"
-                            alt="{{ recipes[selectedIndex].name }}">
+                            alt="img">
                         <p class="txt-center pt-3">Categoria:
-                            <span>{{recipes[selectedIndex].category}}</span>
+                            <span>Deafultcategoria</span>
                         </p>
                         <p class="txt-center pt-3">Ocaciones:
-                            <span>{{recipes[selectedIndex].ocasions}}</span>
+                            <span>DeafultOcaciones</span>
                         </p>
-                        <p class="txt-center pt-3">Nivel: <span>{{recipes[selectedIndex].level}}</span>
+                        <p class="txt-center pt-3">Nivel: <span>DeafultLevel</span>
                         </p>
                     </div>
                     <div class="modal-footer">
@@ -73,7 +77,7 @@
                 </div>
             </div>
         </div>
-      <!-- Modal -->
+            Modal -->
 
         <!--End section Cards-->
 
@@ -132,7 +136,7 @@
     <script src="js/components/Header.js"></script>
     <script src="js/components/Filters.js"></script>
     <script src="js/components/RecipeCard.js"></script>
-    <script src="js/components/RecipeCard.js"></script>
+    <script src="js/components/RecipeDetils.js"></script>
     <script src="js/components/footer.js"></script>
 
     <script>
@@ -148,12 +152,6 @@
 </body>
 
 </html>
-
-<!--
-                    <recipe-card :index="item.id" :image="item.image" :name="item.name" :category="item.category"
-                        :ocasions="item.ocasions" :level="item.level" :likes="item.likes">
-                    </recipe-card>
-                    -->
 
 <!--
                     <div class="cards">

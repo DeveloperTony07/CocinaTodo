@@ -2,10 +2,10 @@ const app = Vue.createApp({
     data() {
         return {
             selectedIndex: 0,
-            //recipe: {},
+            recipe: {},
             recipes: [
                 {
-                    id: 0, image: "./imgs/recipes/Arepas con miel.jpg", name: "Arepas"
+                    id: 0, image: "./imgs/recipes/Arepas con miel.jpg", name: "Arepas", category: "", area:""
                 },
             ],
             categories: [
@@ -105,6 +105,51 @@ const app = Vue.createApp({
             );*/
     },
     methods: {
+
+        /*
+        fillDataDetails() {
+            for (let i = 0; i < this.recipes.length; i++) {
+                axios({
+                    method: 'get',
+                    url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i='+ this.recipes[i].id
+                })
+                    .then(
+                        (response) => {
+                            let items = response.data;
+                            console.log(items);
+                            //this.recipes[i].category= items.category,
+                                this.recipes[i].level = "Easy",
+                                this.recipes[i].categorie = "NA",
+                                this.recipes[i].instructions = "NA"
+                        }
+                    )
+                    .catch(
+                        error => console.log(error)
+                    );
+            }*/
+        /*
+        fillRecipeDetails() {
+            for (let index = 0; index < this.recipes.length; index++) {
+                /// console.log(this.recipes[index].id);
+
+                axios({
+                    method: 'get',
+                    url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + this.recipes[index].id
+
+                })
+                    .then(
+                        (response) => {
+                            let items = response.data.meals[0];
+                            console.log(items);
+                            this.recipes[index].category = items.strCategory;
+                            this.recipes[index].area = items.strArea;
+                        }
+                    )
+                    .catch(
+                        error => console.log(error)
+                    );
+            }
+        },*/
         /*
         fillDataDetails() {
             for (let i = 0; i < this.recipes.length; i++) {
@@ -136,8 +181,29 @@ const app = Vue.createApp({
             this.recipes[index].likes += 1;
         },
         onClickViewRecipe(index) {
-            console.log(index);
-            this.selectedIndex = index;
+            //console.log(index);
+
+            //this.selectedIndex = index;
+            //get recipe details
+            axios({
+                method: 'get',
+                url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + index
+            })
+                .then(
+                    (response) => {
+
+                        let items = response.data.meals[0];
+                        console.log(items);
+                        this.recipe.id = index;
+                        this.recipe.image = items.strMealThumb;
+                        this.recipe.name = items.strMeal;
+                        this.recipe.category = items.strCategory;
+
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                );
         },
         onClickPrev() {
             this.selectedIndex--;
