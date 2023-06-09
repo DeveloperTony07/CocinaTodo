@@ -29,6 +29,10 @@
     }
 }
 
+.mb--10px{
+    margin-bottom: -10px;
+}
+
 /* mr */
 .mr-25px{
     margin-right: 25px;
@@ -90,5 +94,22 @@
     margin-left: 57px;
     @media screen and (max-width: 1485px) {
         margin-left: 0px;
+    }
+}
+
+.ml--270px{
+    margin-left: -270px;
+    @include media-queries.respond-to(media-queries.$phone){
+        margin-left: -128px;  
+    }
+}
+
+.ml-300px{
+    margin-left: 520px;
+    @media screen and (max-width: 1485px) {
+        margin-left: 200px;
+    }
+    @include media-queries.respond-to(media-queries.$phone){
+        margin-left: 35px;
     }
 }

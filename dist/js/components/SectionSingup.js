@@ -2,7 +2,7 @@ app.component('section-singup',{
     template:
     /*html*/
     `
-    <div class="div-txt-title-login">
+<div class="div-txt-title-login">
     <h1 class="txt-title-login">Crea <span>tu propia cuenta</span></h1>
 </div>
 <section class="registration">
@@ -15,7 +15,6 @@ app.component('section-singup',{
             <input class="input-desing" type="email" id="email" name="email" placeholder="Email" required>
         </div>
         <div class="mtl-1">
-
             <input class="input-desing" type="password" id="password" name="password" placeholder="Contraseña"
                 required>
             <div class="toggle-password">

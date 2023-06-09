@@ -76,7 +76,7 @@ app.component('section-upload-recipe',{
 <section class="ml-110px mb-25px">
     <form class="div-flex">
         <div>
-            <label class="txt-dark-med mb-10px" ml-25px for="tiempo-coccion">Tiempo de cocción
+            <label class="txt-dark-med mb-10px" for="tiempo-coccion">Tiempo de cocción
                 (minutos):</label>
             <div>
                 <input class="input-time-recipe" type="number" name="tiempo-coccion" id="tiempo-coccion"
