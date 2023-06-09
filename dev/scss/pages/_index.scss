@@ -23,11 +23,20 @@
 .m-basic{
     margin-left: 6.5rem;
     margin-top: 1.5rem;
+    @media screen and (max-width: 1485px) {
+        margin-left: 8rem;
+    }
+    @include media-queries.respond-to(media-queries.$phone){
+        margin-left: 6rem;
+    }
 }
 
 .m-basic-2{
     margin-left: 6.5rem;
     margin-top: 4rem;
+    @media screen and (max-width: 1485px) {
+        margin-left: 8rem;
+    }
 }
 
 .container-row{

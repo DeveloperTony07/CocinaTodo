@@ -1,0 +1,124 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+@use '../abstracts/media-queries';
+
+.div-txt-title-login {
+    margin: 3.125rem auto 0 auto;
+    text-align: center;
+}
+
+.registration {
+    margin-top: 3.125rem;
+    text-align: center;
+}
+
+/* Desing of the Inputs */
+.input-desing {
+    border-radius: 30px;
+    width: 500px;
+    height: 40px;
+    padding-left: 1%;
+    border-color: vars.$clr-red;
+    border-width: 3px;
+
+    @include media-queries.respond-to(media-queries.$phone){
+        width: 350px;
+    }
+}
+
+/* Text Title Sing up and Long in */
+.container-checkIn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+/* Margin of the inputs */
+.mtl-1 {
+    margin-top: 1rem;
+}
+
+.mtl-2 {
+    margin-top: 1.5rem;
+}
+
+.mbl-1{
+    margin-bottom: 2rem;
+}
+
+.mtl--1 {
+    margin-top: -0.6rem;
+}
+
+/* btn eye password */
+.toggle-password {
+    position: relative;
+    margin-left: 220px;
+    transform: translateY(-1.1rem);
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    @include media-queries.respond-to(media-queries.$phone){
+        margin-left: 145px;
+    }
+}
+
+/* btn check In */
+.btn-checkIn{
+    border-radius: 30px;
+    border: none;
+    background-color: vars.$clr-red;
+    width: 350px;
+    height: 40px;
+    margin-top: 1rem;
+}
+
+/* btn go back*/
+.btn-goBack{
+    border-radius: 30px;
+    border: none;
+    background-color: vars.$clr-dark;
+    width: 350px;
+    height: 40px;
+    margin-top: 1rem;
+}
+
+.btn-enter-here{
+    border: none;
+    background: transparent;
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-med, vars.$clr-red);
+}
+
+/*btn enter here*/
+.line-checkIn {
+    width: 500px;
+    height: 4px;
+    background-color: vars.$clr-red;
+    margin-right: 70px;
+    border-radius: 5px;
+    @media screen and (max-width: 1485px) {
+        width: 225px;
+    }
+    @include media-queries.respond-to(media-queries.$phone) {
+        width: 0px;
+    }
+}
+
+.line-checkIn-two {
+    width: 500px;
+    height: 4px;
+    background-color: vars.$clr-red;
+    margin-left: 70px;
+    border-radius: 5px;
+    @media screen and (max-width: 1485px) {
+        width: 225px;
+    }
+    @include media-queries.respond-to(media-queries.$phone) {
+        width: 0px;
+    }
+}
+
+.container-center{
+    text-align: center;
+}

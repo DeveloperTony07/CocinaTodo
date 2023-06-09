@@ -1,0 +1,46 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+@use '../abstracts/media-queries';
+
+.container-upload {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        margin: 50px 0px 0px 0px;
+    }
+
+    @media screen and (max-width: 1485px) {
+        flex-flow: column wrap;
+    }
+}
+
+/* container option recipes (name, category, level, ocacions)*/
+.div-option-recipes {
+    display: flex;
+}
+
+
+.upload-img{
+    margin: 25px 115px 25px 115px;
+}
+
+.upload-img input[type="file"] {
+    margin-bottom: 10px;
+}
+
+
+
+.image-preview {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+#preview {
+    max-width: 100%;
+    max-height: 300px;
+    margin-top: 10px;
+}

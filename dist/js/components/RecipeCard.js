@@ -11,10 +11,11 @@ app.component('recipe-card', {
             type: String,
             default: "default name"
         },
+        /*
         category: {
             type: String,
         }
-        /*
+        
          ocasions: {
              type: String,
              default: "default description"
@@ -62,7 +63,7 @@ app.component('recipe-card', {
                     let items = response.data.meals[0];
                     console.log(items);
 
-                    //this.category = items.strCategory;
+                    this.category = items.strCategory;
                     this.area = items.strArea;
 
                     //Generate Random Levels

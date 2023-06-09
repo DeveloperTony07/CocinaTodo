@@ -27,11 +27,15 @@
         <header-component></header-component>
         <!-- Close Header -->
 
+        <!-- Start ImgHeader -->
+        <img-header></img-header>
+        <!-- End ImgHeader -->
+
         <!-- Start secction filters -->
         <filters-component></filters-component>
         <!-- End Secction filters-->
 
-        
+
         <!-- Stard Section Carsds -->
         <section>
             <div class="flex-container-card" class="col-sm-3">
@@ -45,7 +49,7 @@
 
         <!-- <recipe-details :index=""></recipe-details> -->
         <recipe-details :name="recipe.name" :image="recipe.image" :id="recipe.id" :category="recipe.category"
-        :area="recipe.area"></recipe-details>
+            :area="recipe.area"></recipe-details>
 
         <!-- Modal 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -134,10 +138,11 @@
 
     <!-- ComponentsJS -->
     <script src="js/components/Header.js"></script>
+    <script src="js/components/ImgHeader.js"></script>
     <script src="js/components/Filters.js"></script>
     <script src="js/components/RecipeCard.js"></script>
     <script src="js/components/RecipeDetils.js"></script>
-    <script src="js/components/footer.js"></script>
+    <script src="js/components/Footer.js"></script>
 
     <script>
         const mountedApp = app.mount("#app");

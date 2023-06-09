@@ -5,7 +5,7 @@ const app = Vue.createApp({
             recipe: {},
             recipes: [
                 {
-                    id: 0, image: "./imgs/recipes/Arepas con miel.jpg", name: "Arepas", category: "", area:""
+                    id: 0, image: "./imgs/recipes/Arepas con miel.jpg", name: "Arepas", category: "", area: ""
                 },
             ],
             categories: [

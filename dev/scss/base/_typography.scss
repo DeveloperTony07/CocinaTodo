@@ -2,8 +2,6 @@
 @use '../abstracts/mixins';
 @use '../abstracts/media-queries';
 
-
-
 /* Texto de los cards */
 .txt-recipe-name-card {
     @include mixins.set-font(vars.$fw-bold, vars.$fs-xmed, vars.$clr-light-dark);
@@ -30,7 +28,7 @@
     }
 }
 
-.txt-num-like2{
+.txt-num-like2 {
     @include mixins.set-font(vars.$fw-bold, vars.$fs-xmed, vars.$clr-light-dark);
     margin-top: 0.6rem;
     margin-left: 1rem;
@@ -59,4 +57,47 @@
     }
 }
 
+/*txt-btn standar*/
+.txt-btn-standar {
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-med, vars.$clr-white);
+    text-decoration: none;
+}
+.txt-btn-standar span{
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-xmed, vars.$clr-white);
+}
+
 /* Text container-search*/
+
+/* Text Title Sing up and Long in */
+
+.txt-title-login {
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-lg, vars.$clr-red);
+}
+
+.txt-title-login span {
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-lg, vars.$clr-dark);
+}
+
+/* Text dark xmed */
+.txt-dark-xmed{
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-xmed, vars.$clr-dark);
+}
+
+/* Text dark med */
+.txt-dark-med{
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-med, vars.$clr-dark);
+}
+
+/* Text red med */
+.txt-red-med{
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-med, vars.$clr-red);
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+

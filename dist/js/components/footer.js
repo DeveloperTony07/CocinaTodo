@@ -5,7 +5,7 @@ app.component('footer-component', {
     <div class="line-red"></div>
 
     <footer class="content-footer">
-        <img src="svgs/LogoDark.svg" alt="logo">
+        <img class="img-logo-margins" src="svgs/LogoDark.svg" alt="logo">
         <div class="body-footer">
             <div class="box-footer">
                 <h2 class="title-footer">Descubre Recetas Por</h2>

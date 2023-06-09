@@ -2,7 +2,7 @@
 @use '../abstracts/mixins';
 @use '../abstracts/media-queries';
 
-.search-bar {
+.input-name-recipes {
     padding: 5px;
     text-align: center;
     margin-right: 30px;
@@ -24,15 +24,14 @@
     }
 }
 
-.search-bar input {
+.input-name-recipes input {
     @include mixins.set-color(vars.$clr-dark);
     border: none;
-    padding-left: 30px;
+    padding-left: 10px;
     font-size: 16px;
     align-items: center;
     background: transparent;
     width: 300px;
-    background-image: url(/dist/svgs/search-1.svg);
     background-repeat: no-repeat;
 
     @media screen and (max-width: 1485px){
@@ -41,4 +40,10 @@
     @include media-queries.respond-to(media-queries.$phone){
         width: 280px;
     }
+}
+
+.input-time-recipe{
+    height: 30px;
+    border-radius: 5px;
+    @include mixins.set-border(2px, vars.$clr-red);
 }

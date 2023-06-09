@@ -1,0 +1,9 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect id="visibility_lock_red2 1" width="24" height="24" fill="url(#pattern0)"/>
+<defs>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_121_17" transform="scale(0.0208333)"/>
+</pattern>
+<image id="image0_121_17" data-name="visibility_lock_red2.png" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABoUlEQVRoge2abW7CMAyGHcTfcSM4wXba7QRwIziA+TEVZV387TZEyishIVp/PHXcmEJBRBhZh94JRDUBemsC9NbwAEcAgMflK+rHey8ukaAf1+9fAKcyNpDahwvGu4S22P1cPq0V2HrbXvyrq6EF2HveUINoALTJW9ewxi9KfqUe0AQpUpCgHZsDVwEpeSn42p46f/mci0dWggLgnHGJS0lwPiSQJoT1NupN3nKuKUYLgHKelbzGRt1Ta4C9ktfYUjH/2BypAwpHnFTBlX5aNq9+kHogM3mvP1YLgHcZZA90LbHV5CqQfrUCInOJjNN7qwnBVWCIB0YLgHe5dF9mGcOcxaZ1LHQR6h4Q77kGRUZwE+S6Ap4NKHP5cYNcU60ltCcE5b9UL1bWaTQLIq35qX2A6geoPudm+vo86jglExy3kXEQADyIORGvpJ1YggCQQTRC4r0YRzNKaCC4wJRPj90/aZvY++Rhc3m+E78ViPfZ6NtARMbpNUSX6bUgIpTS74Lez58m8NPt55UsIo7/C80ESFBo/Zb5V4POmgC9NTzAE1g0WHZ31RVuAAAAAElFTkSuQmCC"/>
+</defs>
+</svg>

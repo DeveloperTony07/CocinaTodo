@@ -3,9 +3,13 @@
 @use "./abstracts/mixins.scss";
 @use "./abstracts/media-queries";
 
+//animations
+@use "./animations/logoRed";
+
 // base
 @use "./base/typography";
 @use "./base/reset";
+@use "./base/margins";
 
 // components
 @use "./components/search-bar";
@@ -17,6 +21,7 @@
 @use "./components/btn-save";
 @use "./components/btn-heard";
 @use "./components/btn-white";
+@use "components/components-upload-recipe";
 
 // layout
 @use "./layout/navbar";
@@ -25,3 +30,5 @@
 
 // pages
 @use "./pages/index";
+@use "./pages/singup";
+@use "./pages/upload-recipe";

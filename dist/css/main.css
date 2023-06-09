@@ -1,3 +1,66 @@
+.ilustration {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.ilustration * {
+  -webkit-animation: animacion-vector 4s ease-in-out infinite;
+          animation: animacion-vector 4s ease-in-out infinite;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+@-webkit-keyframes animacion-vector {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}
+
+@keyframes animacion-vector {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}
+#spoon {
+  font-size: 48px;
+  font-weight: bold;
+  display: inline-block;
+}
+
 /* Texto de los cards */
 .txt-recipe-name-card {
   font-weight: 700;
@@ -68,7 +131,56 @@
   }
 }
 
+/*txt-btn standar*/
+.txt-btn-standar {
+  font-weight: 700;
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.txt-btn-standar span {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: rgb(255, 255, 255);
+}
+
 /* Text container-search*/
+/* Text Title Sing up and Long in */
+.txt-title-login {
+  font-weight: 700;
+  font-size: 2rem;
+  color: rgb(242, 61, 76);
+}
+
+.txt-title-login span {
+  font-weight: 700;
+  font-size: 2rem;
+  color: rgb(1, 10, 38);
+}
+
+/* Text dark xmed */
+.txt-dark-xmed {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: rgb(1, 10, 38);
+}
+
+/* Text dark med */
+.txt-dark-med {
+  font-weight: 700;
+  font-size: 1rem;
+  color: rgb(1, 10, 38);
+}
+
+/* Text red med */
+.txt-red-med {
+  font-weight: 700;
+  font-size: 1rem;
+  color: rgb(242, 61, 76);
+  text-decoration: none;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -77,6 +189,38 @@ html {
 
 body {
   margin: 0px;
+}
+
+.mt-50px {
+  margin-top: 50px;
+}
+
+.mb-25px {
+  margin-bottom: 25px;
+}
+
+.mt-25px {
+  margin-top: 25px;
+}
+
+.mr-25px {
+  margin-right: 25px;
+}
+
+.ml-110px {
+  margin-left: 110px;
+}
+
+.ml-195px {
+  margin-left: 195px;
+}
+
+.ml-255px {
+  margin-left: 255px;
+}
+
+.ml-258px {
+  margin-left: 258px;
 }
 
 .search-bar {
@@ -97,7 +241,7 @@ body {
 }
 @media only screen and (max-width: 500px) {
   .search-bar {
-    width: 300px;
+    width: 370px;
     padding-left: 25px;
     margin-left: 20px;
   }
@@ -152,7 +296,7 @@ body {
 @media only screen and (max-width: 500px) {
   .dropdowns select {
     margin-top: 25px;
-    width: 300px;
+    width: 370px;
     margin-right: 0px;
     margin-left: 0px;
   }
@@ -172,6 +316,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: auto 68px;
 }
 
 .cards {
@@ -425,6 +570,59 @@ body {
   color: rgb(242, 61, 76);
 }
 
+.input-name-recipes {
+  padding: 5px;
+  text-align: center;
+  margin-right: 30px;
+  margin-left: 20px;
+  width: 320px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 25px;
+  border: 3px solid rgb(242, 61, 76);
+}
+@media screen and (max-width: 1485px) {
+  .input-name-recipes {
+    width: 630px;
+    margin-left: 0px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .input-name-recipes {
+    width: 370px;
+    padding-left: 25px;
+    margin-left: 20px;
+  }
+}
+
+.input-name-recipes input {
+  color: rgb(1, 10, 38);
+  border: none;
+  padding-left: 10px;
+  font-size: 16px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: transparent;
+  width: 300px;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 1485px) {
+  .input-name-recipes input {
+    width: 600px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .input-name-recipes input {
+    width: 280px;
+  }
+}
+
+.input-time-recipe {
+  height: 30px;
+  border-radius: 5px;
+  border: 2px solid rgb(242, 61, 76);
+}
+
 .header {
   background-color: rgb(242, 61, 76);
   display: -webkit-box;
@@ -528,7 +726,7 @@ body {
 }
 /* Nav */
 .header .overlay {
-  height: 350px;
+  height: 300px;
   width: 0;
   position: fixed;
   z-index: 1;
@@ -594,6 +792,72 @@ body {
 }
 
 /* Nav */
+.header .overlay-two {
+  height: 250px;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: rgb(242, 61, 76);
+  overflow: hidden;
+  -webkit-transition: all 0.3 ease 0s;
+  transition: all 0.3 ease 0s;
+}
+
+.header .overlay-two .overlay-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  padding: 25px;
+}
+
+.header .overlay-two .overlay-content li {
+  list-style: none;
+}
+
+.header .overlay-two a {
+  padding: 15px;
+  display: block;
+  -webkit-transition: all 0.3 ease 0s;
+  transition: all 0.3 ease 0s;
+  font-weight: 400;
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+}
+
+.header .overlay-two a:hover {
+  font-weight: 700;
+  font-size: 1rem;
+  color: rgb(1, 10, 38);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.header .overlay-two .close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 40px;
+}
+
+.header .overlay-two .close:hover {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 40px;
+}
+
 .container-img-header {
   max-width: 100%;
   height: auto;
@@ -656,7 +920,12 @@ body {
 }
 
 .content-footer img {
-  margin: auto;
+  margin-right: 30rem;
+}
+@media screen and (max-width: 1485px) {
+  .content-footer img {
+    margin-right: 2.5rem;
+  }
 }
 @media only screen and (max-width: 500px) {
   .content-footer img {
@@ -671,13 +940,12 @@ body {
 }
 
 .box-footer {
-  margin-left: 28rem;
-  padding: auto;
+  margin-bottom: 1rem;
   width: 13rem;
 }
 @media screen and (max-width: 1485px) {
   .box-footer {
-    margin-left: 8.2rem;
+    margin-left: 7rem;
     width: 10.5rem;
   }
 }
@@ -688,25 +956,26 @@ body {
 }
 
 .box-footer-two {
-  margin-left: 23.5rem;
+  margin-left: 20.5rem;
   padding: 0 auto;
   width: 10rem;
 }
 @media screen and (max-width: 1485px) {
   .box-footer-two {
-    margin-left: 6rem;
+    margin-left: 4rem;
+    margin-right: 1rem;
   }
 }
 @media only screen and (max-width: 500px) {
   .box-footer-two {
-    margin-left: auto;
+    margin-left: 1rem;
   }
 }
 
 .line-red {
-  height: 3px;
+  height: 4px;
   background-color: rgb(242, 61, 76);
-  margin: 2% 122px;
+  margin: 2% 0px;
   width: auto;
   border-radius: 10px;
 }
@@ -719,7 +988,7 @@ body {
 .line-red2 {
   height: 4px;
   background-color: rgb(242, 61, 76);
-  margin: 1% 122px 2% 122px;
+  margin: 1% 0px 2% 0px;
   width: auto;
   border-radius: 10px;
 }
@@ -802,6 +1071,41 @@ body {
 .mr-ff-1 {
   margin-left: 1rem;
 }
+@media screen and (max-width: 1485px) {
+  .mr-ff-1 {
+    margin-left: 0.5rem;
+  }
+}
+
+/* Footer two */
+.content-footer-two {
+  margin: 0 0;
+  display: block;
+  background-color: rgb(242, 61, 76);
+}
+@media only screen and (max-width: 500px) {
+  .content-footer-two {
+    margin: 0 30px;
+    display: block;
+  }
+}
+
+.content-footer-two img {
+  margin: 1% 50% 0 46%;
+}
+
+.line-white {
+  height: 4px;
+  background-color: rgb(1, 10, 38);
+  margin: 2% 0px;
+  width: auto;
+  border-radius: 10px;
+}
+@media only screen and (max-width: 500px) {
+  .line-white {
+    margin: 0 30px;
+  }
+}
 
 /* Container-search */
 .container-search {
@@ -838,10 +1142,25 @@ body {
   margin-left: 6.5rem;
   margin-top: 1.5rem;
 }
+@media screen and (max-width: 1485px) {
+  .m-basic {
+    margin-left: 8rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .m-basic {
+    margin-left: 6rem;
+  }
+}
 
 .m-basic-2 {
   margin-left: 6.5rem;
   margin-top: 4rem;
+}
+@media screen and (max-width: 1485px) {
+  .m-basic-2 {
+    margin-left: 8rem;
+  }
 }
 
 .container-row {
@@ -891,3 +1210,199 @@ body {
 }
 
 /* Container-search */
+.div-txt-title-login {
+  margin: 3.125rem auto 0 auto;
+  text-align: center;
+}
+
+.registration {
+  margin-top: 3.125rem;
+  text-align: center;
+}
+
+/* Desing of the Inputs */
+.input-desing {
+  border-radius: 30px;
+  width: 500px;
+  height: 40px;
+  padding-left: 1%;
+  border-color: rgb(242, 61, 76);
+  border-width: 3px;
+}
+@media only screen and (max-width: 500px) {
+  .input-desing {
+    width: 350px;
+  }
+}
+
+/* Text Title Sing up and Long in */
+.container-checkIn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 50px;
+}
+
+/* Margin of the inputs */
+.mtl-1 {
+  margin-top: 1rem;
+}
+
+.mtl-2 {
+  margin-top: 1.5rem;
+}
+
+.mbl-1 {
+  margin-bottom: 2rem;
+}
+
+.mtl--1 {
+  margin-top: -0.6rem;
+}
+
+/* btn eye password */
+.toggle-password {
+  position: relative;
+  margin-left: 220px;
+  -webkit-transform: translateY(-1.1rem);
+          transform: translateY(-1.1rem);
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+@media only screen and (max-width: 500px) {
+  .toggle-password {
+    margin-left: 145px;
+  }
+}
+
+/* btn check In */
+.btn-checkIn {
+  border-radius: 30px;
+  border: none;
+  background-color: rgb(242, 61, 76);
+  width: 350px;
+  height: 40px;
+  margin-top: 1rem;
+}
+
+/* btn go back*/
+.btn-goBack {
+  border-radius: 30px;
+  border: none;
+  background-color: rgb(1, 10, 38);
+  width: 350px;
+  height: 40px;
+  margin-top: 1rem;
+}
+
+.btn-enter-here {
+  border: none;
+  background: transparent;
+  font-weight: 700;
+  font-size: 1rem;
+  color: rgb(242, 61, 76);
+}
+
+/*btn enter here*/
+.line-checkIn {
+  width: 500px;
+  height: 4px;
+  background-color: rgb(242, 61, 76);
+  margin-right: 70px;
+  border-radius: 5px;
+}
+@media screen and (max-width: 1485px) {
+  .line-checkIn {
+    width: 225px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .line-checkIn {
+    width: 0px;
+  }
+}
+
+.line-checkIn-two {
+  width: 500px;
+  height: 4px;
+  background-color: rgb(242, 61, 76);
+  margin-left: 70px;
+  border-radius: 5px;
+}
+@media screen and (max-width: 1485px) {
+  .line-checkIn-two {
+    width: 225px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .line-checkIn-two {
+    width: 0px;
+  }
+}
+
+.container-center {
+  text-align: center;
+}
+
+.container-upload {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media only screen and (max-width: 500px) {
+  .container-upload {
+    margin: 50px 0px 0px 0px;
+  }
+}
+@media screen and (max-width: 1485px) {
+  .container-upload {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+  }
+}
+
+/* container option recipes (name, category, level, ocacions)*/
+.div-option-recipes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.upload-img {
+  margin: 25px 115px 25px 115px;
+}
+
+.upload-img input[type=file] {
+  margin-bottom: 10px;
+}
+
+.image-preview {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+#preview {
+  max-width: 100%;
+  max-height: 300px;
+  margin-top: 10px;
+}

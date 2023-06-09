@@ -1,6 +1,6 @@
-app.component('header-component',{
+app.component('header-two',{
     template:
-    /*html*/
+    /* html */
     `
     <header class="header">
     <div class="logo">
@@ -12,25 +12,21 @@ app.component('header-component',{
             <li><a class="nav-txt mr-30" href="#">Subir Receta</a></li>
             <li><a class="nav-txt mr-30" href="#">Recetas Guardadas</a></li>
             <li><a class="nav-txt mr-30" href="#">Perfil</a></li>
-            <button class="btn-white mr-30"><a  href="singup.html" class="btn-title-a">Registrarse</a></button>
-            <button class="btn-white"><a href="login.html" class="btn-title-a">Iniciar Sesión</a></button>
         </ul>
     </nav>
 
     <a onclick="openNav()" class="btn-nav-menu" href="#"><button>Menu</button></a>
 
-    <div class="overlay" id="mobile-menu">
+    <div class="overlay-two" id="mobile-menu">
         <a class="close" onclick="closeNav()" href="#">&times;</a>
         <div class="overlay-content">
             <li><a class="nav-txt" href="#">Inicio</a></li>
             <li><a class="nav-txt" href="#">Subir Receta</a></li>
             <li><a class="nav-txt" href="#">Recetas Guardadas</a></li>
             <li><a class="nav-txt" href="#">Perfil</a></li>
-            <button class="btn-white"><a class="btn-title-a">Registrarse</a></button>
-            <button class="btn-white"><a class="btn-title-a">Iniciar Sesión</a></button>
         </div>
     </div>
 </header>
 
-`
+    `
 })

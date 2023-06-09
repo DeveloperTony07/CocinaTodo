@@ -106,7 +106,7 @@
 
 /* Nav */
 .header .overlay {
-    height: 350px;
+    height: 300px;
     width: 0;
     position: fixed;
     z-index: 1;
@@ -158,3 +158,56 @@
 }
 
 /* Nav */
+
+
+.header .overlay-two {
+    height: 250px;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    @include mixins.set-background-color(vars.$clr-red);
+    overflow: hidden;
+    transition: all 0.3 ease 0s;
+}
+
+.header .overlay-two .overlay-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    padding: 25px;
+}
+
+.header .overlay-two .overlay-content li {
+    list-style: none;
+}
+
+.header .overlay-two a {
+    padding: 15px;
+    display: block;
+    transition: all 0.3 ease 0s;
+    @include mixins.set-font(vars.$fw-regular, vars.$fs-med, vars.$clr-white);
+}
+
+.header .overlay-two a:hover {
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-med, vars.$clr-dark);
+    transform: scale(1.1);
+}
+
+.header .overlay-two .close {
+    position: absolute;
+    //margin: 0px 50px 0 50px;
+    top: 20px;
+    right: 45px;
+    font-size: 40px;
+}
+
+.header .overlay-two .close:hover {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 40px;
+}
