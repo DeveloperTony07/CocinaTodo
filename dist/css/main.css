@@ -191,24 +191,89 @@ body {
   margin: 0px;
 }
 
+/* mt */
 .mt-50px {
   margin-top: 50px;
-}
-
-.mb-25px {
-  margin-bottom: 25px;
 }
 
 .mt-25px {
   margin-top: 25px;
 }
 
+@media screen and (max-width: 1485px) {
+  .mt--10px {
+    margin-top: -25px;
+  }
+}
+
+/* mb */
+.mb-25px {
+  margin-bottom: 25px;
+}
+
+.mb-10px {
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 1485px) {
+  .mb-10px {
+    margin-top: 25px;
+  }
+}
+
+/* mr */
 .mr-25px {
   margin-right: 25px;
 }
 
+/* ml*/
+.ml-20px {
+  margin-left: 20px;
+}
+@media screen and (max-width: 1485px) {
+  .ml-20px {
+    margin-left: 0px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .ml-20px {
+    margin-left: 20px;
+  }
+}
+
+.ml-20-1px {
+  margin-left: 20px;
+}
+@media screen and (max-width: 1485px) {
+  .ml-20-1px {
+    margin-left: 0px;
+  }
+}
+
+.ml-25px {
+  margin-left: 25px;
+}
+
+.ml-50px {
+  margin-left: 50px;
+}
+@media screen and (max-width: 1485px) {
+  .ml-50px {
+    margin-left: 110px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .ml-50px {
+    margin-left: 20px;
+  }
+}
+
 .ml-110px {
   margin-left: 110px;
+}
+@media only screen and (max-width: 500px) {
+  .ml-110px {
+    margin-left: 20px;
+  }
 }
 
 .ml-195px {
@@ -221,6 +286,30 @@ body {
 
 .ml-258px {
   margin-left: 258px;
+}
+
+.ml-57px {
+  margin-left: 57px;
+}
+@media screen and (max-width: 1485px) {
+  .ml-57px {
+    margin-left: 0px;
+  }
+}
+
+/* pl */
+.pl-56px {
+  padding-left: 56px;
+}
+@media screen and (max-width: 1485px) {
+  .pl-56px {
+    padding-left: 0px;
+  }
+}
+
+/* pb */
+.pb-10px {
+  padding-bottom: 10px;
 }
 
 .search-bar {
@@ -575,9 +664,9 @@ body {
   text-align: center;
   margin-right: 30px;
   margin-left: 20px;
-  width: 320px;
+  width: 280px;
   background-color: rgb(255, 255, 255);
-  border-radius: 25px;
+  border-radius: 5px;
   border: 3px solid rgb(242, 61, 76);
 }
 @media screen and (max-width: 1485px) {
@@ -603,7 +692,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background: transparent;
-  width: 300px;
+  width: 285px;
   background-repeat: no-repeat;
 }
 @media screen and (max-width: 1485px) {
@@ -617,10 +706,81 @@ body {
   }
 }
 
+/* Input time recipes */
 .input-time-recipe {
   height: 30px;
+  width: 395px;
   border-radius: 5px;
   border: 2px solid rgb(242, 61, 76);
+}
+@media screen and (max-width: 1485px) {
+  .input-time-recipe {
+    width: 630px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .input-time-recipe {
+    width: 370px;
+  }
+}
+
+/* Dropdowns */
+.dropdowns-upload {
+  background-color: transparent;
+}
+
+.dropdowns-upload select {
+  padding: 7.5px 0px 7.5px 0px;
+  width: 307px;
+  text-align: center;
+  margin-right: 30px;
+  border: none;
+  border-radius: 5px;
+  border: 3px solid rgb(242, 61, 76);
+  font-weight: 400;
+  font-size: 1rem;
+  color: rgb(242, 61, 76);
+}
+@media screen and (max-width: 1485px) {
+  .dropdowns-upload select {
+    margin-top: 25px;
+    width: 630px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .dropdowns-upload select {
+    margin-top: 25px;
+    width: 370px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+/* text area */
+.text-area-upload {
+  width: 1300px;
+  border: 2px solid rgb(242, 61, 76);
+}
+@media screen and (max-width: 1485px) {
+  .text-area-upload {
+    width: 630px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .text-area-upload {
+    width: 370px;
+  }
+}
+
+/* btn submit */
+.btn-submit {
+  background-color: rgb(242, 61, 76);
+  border: none;
+  padding: 7.5px 140px 7.5px 140px;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
 }
 
 .header {
@@ -1365,6 +1525,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-left: 10px;
 }
 @media only screen and (max-width: 500px) {
   .container-upload {
@@ -1390,19 +1551,49 @@ body {
 .upload-img {
   margin: 25px 115px 25px 115px;
 }
+@media only screen and (max-width: 500px) {
+  .upload-img {
+    margin: 25px 25px 25px 25px;
+  }
+}
 
 .upload-img input[type=file] {
   margin-bottom: 10px;
 }
 
 .image-preview {
-  border: 2px dashed #ccc;
+  border: 2px dashed rgb(242, 61, 76);
   padding: 20px;
   text-align: center;
+}
+@media screen and (max-width: 1485px) {
+  .image-preview {
+    width: 630px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .image-preview {
+    width: 365px;
+  }
 }
 
 #preview {
   max-width: 100%;
   max-height: 300px;
   margin-top: 10px;
+}
+
+.div-block {
+  display: block;
+}
+
+.div-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media screen and (max-width: 1485px) {
+  .div-flex {
+    display: block;
+  }
 }

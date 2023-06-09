@@ -1,0 +1,9 @@
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect id="account_circle_Red 1" width="18" height="18" fill="url(#pattern0)"/>
+<defs>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_138_28" transform="scale(0.0208333)"/>
+</pattern>
+<image id="image0_138_28" data-name="account_circle_Red.png" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABm0lEQVRoge1awXHDMAyzc/l2pW6QabtBV8oA7st3jiySAAlXcc74JReChEVSlJx5WZbpzLiNDqCKS8Bo3Nsvnt+PLBdbTHPGydfvz8vnnQASlQ6wtU2Jmaa8AHXrWvloIZkaOLLv0tzsCkQO0Cfo8SwEDyXAcprJ361NjxcWgaaQMniUA0onRECPaHYct7ZIIBZfaBulkBU8a4O2zLlj76aTtwKq4NnfUCuhHCWYFihrxZYA9ul7RZ4pUngV0BVgu00bOFr0tM/TT6M9Ae98RNvFhqyAYrPKIvT9kSmkQLSZyVA90KywdtDIpgzlCjAByepKnUJIYNKmcEQNRMOaFKoaaPFvrfdqo6NxegG9Gmh7OnVLsLHpocqzs1cVMbrLhgGxqN5KoId2j9fjDmEJiE5E1cB73C0/EpP8Zs5ymk2xEJ6A3oDmgd2BJdxRDaCzTfZ6sTw7VU5k2cAZHtmJzEoBRSFbPPJbCe9+JyPEszvken0lLvVt0AeMzCx05KhMc2dHCba/o3w0qrNQ9KYFtc0HcP1XYjAuAaPxB6msVHlo6WOLAAAAAElFTkSuQmCC"/>
+</defs>
+</svg>

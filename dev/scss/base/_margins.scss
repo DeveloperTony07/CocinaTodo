@@ -1,25 +1,78 @@
 @use '../abstracts/vars';
 @use '../abstracts/mixins';
+@use '../abstracts/media-queries';
 
+/* mt */
 .mt-50px{
     margin-top: 50px;
-}
-
-.mb-25px{
-    margin-bottom: 25px;
 }
 
 .mt-25px{
     margin-top: 25px;
 }
 
+.mt--10px{
+    @media screen and (max-width: 1485px) {
+        margin-top: -25px;
+    }
+}
+
+/* mb */
+.mb-25px{
+    margin-bottom: 25px;
+}
+
+.mb-10px{
+    margin-bottom: 10px;
+    @media screen and (max-width: 1485px) {
+        margin-top: 25px;
+    }
+}
+
+/* mr */
 .mr-25px{
     margin-right: 25px;
 }
 
+/* ml*/
+.ml-20px{
+    margin-left: 20px;
+    @media screen and (max-width: 1485px) {
+        margin-left: 0px;
+    }
+    @include media-queries.respond-to(media-queries.$phone){
+        margin-left: 20px;
+    }
+}
+
+.ml-20-1px{
+    margin-left: 20px;
+    @media screen and (max-width: 1485px) {
+        margin-left: 0px;
+    }
+}
+
+.ml-25px{
+    margin-left: 25px;
+}
+
+.ml-50px{
+    margin-left: 50px;
+    @media screen and (max-width: 1485px) {
+        margin-left: 110px;
+    }
+    @include media-queries.respond-to(media-queries.$phone){
+        margin-left: 20px;
+    }
+}
+
 .ml-110px{
     margin-left: 110px;
+    @include media-queries.respond-to(media-queries.$phone){
+        margin-left: 20px;
+    }
 }
+
 
 .ml-195px{
     margin-left: 195px;
@@ -31,4 +84,11 @@
 
 .ml-258px{
     margin-left: 258px;
+}
+
+.ml-57px{
+    margin-left: 57px;
+    @media screen and (max-width: 1485px) {
+        margin-left: 0px;
+    }
 }

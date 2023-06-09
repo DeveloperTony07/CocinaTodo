@@ -1,0 +1,16 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+@use '../abstracts/media-queries';
+
+/* pl */
+.pl-56px{
+    padding-left: 56px;
+    @media screen and (max-width: 1485px) {
+        padding-left: 0px;
+    }
+}
+
+/* pb */
+.pb-10px{
+    padding-bottom: 10px;
+}

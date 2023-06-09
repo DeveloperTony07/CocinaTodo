@@ -7,9 +7,9 @@
     text-align: center;
     margin-right: 30px;
     margin-left: 20px;
-    width: 320px;
+    width: 280px;
     background-color: vars.$clr-white;
-    border-radius: 25px;
+    border-radius: 5px;
     @include mixins.set-border(3px, vars.$clr-red);
 
     
@@ -31,7 +31,7 @@
     font-size: 16px;
     align-items: center;
     background: transparent;
-    width: 300px;
+    width: 285px;
     background-repeat: no-repeat;
 
     @media screen and (max-width: 1485px){
@@ -41,9 +41,67 @@
         width: 280px;
     }
 }
-
+/* Input time recipes */
 .input-time-recipe{
     height: 30px;
+    width: 395px;
     border-radius: 5px;
     @include mixins.set-border(2px, vars.$clr-red);
+    @media screen and (max-width: 1485px) {
+        width: 630px;
+    }
+    @include media-queries.respond-to(media-queries.$phone){
+        width: 370px;
+    }
+}
+
+/* Dropdowns */
+.dropdowns-upload {
+    background-color: transparent;
+}
+
+.dropdowns-upload select {
+    padding: 7.5px 0px 7.5px 0px;
+    width: 307px;
+    text-align: center;
+    margin-right: 30px;
+    border: none;
+    border-radius: 5px;
+    @include mixins.set-border(3px, vars.$clr-red);
+    @include mixins.set-font(vars.$fw-regular, vars.$fs-med, vars.$clr-red);
+
+    @media screen and (max-width: 1485px) {
+        margin-top: 25px;
+        width: 630px;
+    }
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        margin-top: 25px;
+        width: 370px;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+}
+
+/* text area */
+
+.text-area-upload{
+    width: 1300px;
+    @include mixins.set-border(2px, vars.$clr-red);
+
+    @media screen and (max-width: 1485px) {
+        width: 630px;
+    }
+    @include media-queries.respond-to(media-queries.$phone) {
+        width: 370px;
+    }
+}
+
+/* btn submit */
+.btn-submit{
+    @include mixins.set-background-color(vars.$clr-red);
+    border: none;
+    padding: 7.5px 140px 7.5px 140px;
+    border-radius: 3px;
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-med, vars.$clr-white);
 }

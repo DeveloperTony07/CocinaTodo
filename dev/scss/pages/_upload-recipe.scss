@@ -7,6 +7,7 @@
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
+    margin-left: 10px;
 
     @include media-queries.respond-to(media-queries.$phone) {
         margin: 50px 0px 0px 0px;
@@ -25,22 +26,41 @@
 
 .upload-img{
     margin: 25px 115px 25px 115px;
+
+    @include media-queries.respond-to(media-queries.$phone){
+        margin: 25px 25px 25px 25px;
+    }
 }
 
 .upload-img input[type="file"] {
     margin-bottom: 10px;
 }
 
-
-
 .image-preview {
-    border: 2px dashed #ccc;
+    border: 2px dashed vars.$clr-red;
     padding: 20px;
     text-align: center;
+    @media screen and (max-width: 1485px) {
+        width: 630px;
+    }
+    @include media-queries.respond-to(media-queries.$phone){
+        width: 365px;
+    }
 }
 
 #preview {
     max-width: 100%;
     max-height: 300px;
     margin-top: 10px;
+}
+
+.div-block{
+    display: block ;
+}
+
+.div-flex{
+    display: flex;
+    @media screen and (max-width: 1485px) {
+        display: block;
+    }
 }

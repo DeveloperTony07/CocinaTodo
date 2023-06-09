@@ -36,10 +36,10 @@ app.component('section-login',{
         <button class="btn-goBack" type="submit"><a href="index.html" class="txt-btn-standar">Volver</a></button>
     </div>
     <div class="mbl-2 mtl-2">
-        <p class="txt-dark-med">Si olvidaste tu contraseña <button class="btn-enter-here" type="submit"><a class="txt-red-med" href="#">Ingresa Aquí</a> </button> </p>
+        <p class="txt-dark-med">Si olvidaste tu contraseña <button class="btn-enter-here" type="submit"><a href="#" class="txt-red-med" href="#">Ingresa Aquí</a> </button> </p>
         </div>
     <div class="mbl-1 mtl-2">
-    <p class="txt-dark-med">Si no tienes una cuenta <button class="btn-enter-here" type="submit"><a class="txt-red-med" href="singup.html">Ingrsa Aquí</a></button></p>
+    <p class="txt-dark-med">Si no tienes una cuenta <button class="btn-enter-here" type="submit"><a class="txt-red-med" href="singup.html">Ingresa Aquí</a></button></p>
     </div>
 </div>
     `
