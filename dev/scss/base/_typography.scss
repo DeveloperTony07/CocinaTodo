@@ -88,12 +88,20 @@
     @include mixins.set-font(vars.$fw-bold, vars.$fs-med, vars.$clr-dark);
 }
 
+.txt-dark-med span{
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-med, vars.$clr-red);
+}
+
 /* Text red med */
 .txt-red-med{
     @include mixins.set-font(vars.$fw-bold, vars.$fs-med, vars.$clr-red);
     text-decoration: none;
 }
 
+/* txt-dark-bold-lg */
+.txt-dark-bold-lg{
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-xxmed, vars.$clr-dark);
+}
 
 
 

@@ -173,12 +173,25 @@
   color: rgb(1, 10, 38);
 }
 
+.txt-dark-med span {
+  font-weight: 700;
+  font-size: 1rem;
+  color: rgb(242, 61, 76);
+}
+
 /* Text red med */
 .txt-red-med {
   font-weight: 700;
   font-size: 1rem;
   color: rgb(242, 61, 76);
   text-decoration: none;
+}
+
+/* txt-dark-bold-lg */
+.txt-dark-bold-lg {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: rgb(1, 10, 38);
 }
 
 html {
@@ -253,6 +266,10 @@ body {
   }
 }
 
+.ml-10x {
+  margin-left: 10px;
+}
+
 .ml-25px {
   margin-left: 25px;
 }
@@ -268,6 +285,22 @@ body {
 @media only screen and (max-width: 500px) {
   .ml-50px {
     margin-left: 20px;
+  }
+}
+
+.ml-60px {
+  margin-left: 80px;
+}
+@media screen and (max-width: 1485px) {
+  .ml-60px {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .ml-60px {
+    text-align: center;
+    margin-left: 0px;
   }
 }
 
@@ -462,16 +495,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  margin-left: -0.5rem;
 }
 
 .flex-container-card-top {

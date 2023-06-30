@@ -56,6 +56,10 @@
     }
 }
 
+.ml-10x{
+    margin-left: 10px;
+}
+
 .ml-25px{
     margin-left: 25px;
 }
@@ -70,13 +74,24 @@
     }
 }
 
+.ml-60px{
+    margin-left: 80px;
+    @media screen and (max-width: 1485px) {
+        margin-left: 0;
+        text-align: center;
+    }
+    @include media-queries.respond-to(media-queries.$phone){
+        text-align: center;
+        margin-left: 0px;
+    }
+}
+
 .ml-110px{
     margin-left: 110px;
     @include media-queries.respond-to(media-queries.$phone){
         margin-left: 20px;
     }
 }
-
 
 .ml-195px{
     margin-left: 195px;

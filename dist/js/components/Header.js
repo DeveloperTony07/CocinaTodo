@@ -10,8 +10,8 @@ app.component('header-component',{
         <ul class="nav-links">
             <li><a class="nav-txt mr-30" href="index.html">Inicio</a></li>
             <li><a class="nav-txt mr-30" href="uploadrecipe.html">Subir Receta</a></li>
-            <li><a class="nav-txt mr-30" href="#">Recetas Guardadas</a></li>
-            <li><a class="nav-txt mr-30" href="#">Perfil</a></li>
+            <li><a class="nav-txt mr-30" href="savedrecipes.html">Recetas Guardadas</a></li>
+            <li><a class="nav-txt mr-30" href="profile.html">Perfil</a></li>
             <button class="btn-white mr-30"><a  href="singup.html" class="btn-title-a">Registrarse</a></button>
             <button class="btn-white"><a href="login.html" class="btn-title-a">Iniciar Sesión</a></button>
         </ul>
@@ -24,8 +24,8 @@ app.component('header-component',{
         <div class="overlay-content">
             <li><a class="nav-txt" href="index.html">Inicio</a></li>
             <li><a class="nav-txt" href="uploadrecipe.html">Subir Receta</a></li>
-            <li><a class="nav-txt" href="#">Recetas Guardadas</a></li>
-            <li><a class="nav-txt" href="#">Perfil</a></li>
+            <li><a class="nav-txt" href="savedrecipes.html">Recetas Guardadas</a></li>
+            <li><a class="nav-txt" href="profile.html">Perfil</a></li>
             <button class="btn-white"><a href="singup.html" class="btn-title-a">Registrarse</a></button>
             <button class="btn-white"><a href="login.html" class="btn-title-a">Iniciar Sesión</a></button>
         </div>

@@ -28,7 +28,8 @@ app.component('section-change-password', {
 </div>
 
 <div class="container-center mtl-2 mb-25px">
-    <button class="btn-checkIn txt-btn-standar" type="submit">Confirmar</button>
+    <button class="btn-checkIn txt-btn-standar" type="submit"><a href="confirpassword.html"
+    class="txt-btn-standar">Confirmar</a></button>
     <div class="mtl-1">
         <button class="btn-goBack" type="submit"><a href="index.html"
                 class="txt-btn-standar">Volver</a></button>

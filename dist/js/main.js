@@ -5,7 +5,14 @@ const app = Vue.createApp({
             recipe: {},
             recipes: [
                 {
-                    id: 0, image: "./imgs/recipes/Arepas con miel.jpg", name: "Arepas", category: "", area: ""
+                    id: 0, image: "./imgs/recipes/Arepas con miel.jpg", name: "Arepas", category: "", occasion: "", level: "",
+                    likes: 0
+                },
+            ],
+            topRecipes: [
+                {
+                    id: 0, image: "./imgs/recipes/Arepas con miel.jpg", name: "Arepas", category: "", occasion: "", level: "",
+                    likes: 0
                 },
             ],
             categories: [
@@ -17,23 +24,23 @@ const app = Vue.createApp({
                 { name: 'Navidad' },
                 { name: 'Semana Santa' }
             ],
+            categories: [],
         }
     },
     mounted: function () {
         //Connect to API
+        //Connect to categories
         axios({
             method: 'get',
-            url: 'https://www.themealdb.com/api/json/v1/1/list.php?c=list'
+            url: 'http://localhost/prueba01/public/api/recipes/categories'
         })
             .then(
                 (response) => {
-                    console.log(response.data.meals);
-                    //this.categories = response.data.meals;
-                    let items = response.data.meals;
+                    console.log(response.data);
+                    let items = response;
                     items.forEach((element, index) => {
-                        this.categories.push({ id: index, name: element.strCategory });
+                        this.categories.push({ id: index, name: element.category });
                     });
-                    //console.log(this.categories);
                 }
             )
             .catch(
@@ -43,24 +50,26 @@ const app = Vue.createApp({
         //connect to API get a default recipes list
         axios({
             method: 'get',
-            url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
+            url: 'http://localhost/prueba01/public/api/recipes/all'
         })
             .then(
                 (response) => {
 
-                    let items = response.data.meals;
+                    let items = response.data;
                     console.log(items);
 
                     this.recipes = [];
 
-                    //if (items.length > 0) this.loading = false;
-
+                    const route = "http://localhost/prueba01/public/storage/imgs/";
                     items.forEach(element => {
-                        const index = parseInt(element.idMeal);
                         this.recipes.push({
-                            id: index,
-                            image: element.strMealThumb,
-                            name: element.strMeal,
+                            id: element.id,
+                            name: element.name,
+                            category: element.category,
+                            image: route + element.image,
+                            occasion: element.occasion,
+                            level: element.level,
+                            likes: element.likes
                         })
                     })
                 }
@@ -69,40 +78,38 @@ const app = Vue.createApp({
                 error => console.log(error)
             );
 
-        /*
-        axios({
-            method: 'get',
-            url: 'https://api.spoonacular.com/recipes/complexSearch?type=maincourse&apiKey=5307c86c068f49209b1fe0e7bafc68df'
-        })
-            .then(
-                (response) => {
-
-                    let items = response.data.results;
-                    console.log(items);
-                    this.recipes = [];
-
-                    if (items.length > 0) this.loading = false;
-
-                    items.forEach(element => {
-                        this.recipes.push({
-                            id: element.id,
-                            image: element.image,
-                            name: element.title,
-                            //category: element.category,
-                            //time:  element.readyInMinutes + "mins",
-                            //level: "Easy",
-                            //likes: element.aggregateLikes,
-                            //ingredients: "NA",
-                            //instructions: "NA"
+            //Connect api with top 10 recipes
+            
+            axios({
+                method: 'get',
+                url: 'http://localhost/prueba01/public/api/recipes/top10'
+            })
+                .then(
+                    (response) => {
+    
+                        let items = response.data;
+                        console.log(items);
+    
+                        this.topRecipes = [];
+    
+                        const route = "http://localhost/prueba01/public/storage/imgs/";
+                        items.forEach(element => {
+                            this.recipes.push({
+                                id: element.id,
+                                name: element.name,
+                                category: element.category,
+                                image: route + element.image,
+                                occasion: element.occasion,
+                                level: element.level,
+                                likes: element.likes
+                            })
                         })
-                    })
-                    //   console.log(this.recipes);
-                    this.fillDataDetails();
-                }
-            )
-            .catch(
-                error => console.log(error)
-            );*/
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                );
+                
     },
     methods: {
 
@@ -175,10 +182,14 @@ const app = Vue.createApp({
             }
         },*/
         onClickLike(index) {
-            // console.log("btn - click");
-            //this.likes += 1;
-            //console.log("INDEX ->" + index);
-            this.recipes[index].likes += 1;
+            const recipe = this.recipes[index - 1];
+            if (recipe.liked) {
+                recipe.likes -= 1;
+                recipe.liked = false;
+            } else {
+                recipe.likes += 1;
+                recipe.liked = true;
+            }
         },
         onClickViewRecipe(index) {
             //console.log(index);

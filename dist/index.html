@@ -40,14 +40,14 @@
         <section>
             <div class="flex-container-card" class="col-sm-3">
                 <div v-for="(item,index) in recipes">
-                    <recipe-card :index="item.id" :image="item.image" :name="item.name"
-                        v-on:recipedetails="onClickViewRecipe" v-on:recipelike="onClickLike">
+                    <recipe-card :index="item.id" :image="item.image" :name="item.name" :category="item.category"
+                    :level="item.level" :likes="item.likes" v-on:recipedetails="onClickViewRecipe" v-on:recipelike="onClickLike">
                     </recipe-card>
                 </div>
             </div>
         </section>
 
-        <!-- <recipe-details :index=""></recipe-details> -->
+        <!-- recipe-details -->
         <recipe-details :name="recipe.name" :image="recipe.image" :id="recipe.id" :category="recipe.category"
             :area="recipe.area"></recipe-details>
 
@@ -88,6 +88,15 @@
         <button class="btn-see-more">Ver Más</button>
 
         <!-- top 10 recipes-->
+
+        <h2 class="txt-filters m-basic ml-toprecipes">10 <span>Mejores Recetas</span></h2>
+
+        <!--
+        <div class="flex-container-card-top" class="col-sm-3">
+            <div v-for="(item,index) in topRecipes">-->
+
+
+        <!--
         <h2 class="txt-filters m-basic ml-toprecipes">10 <span>Mejores Recetas</span></h2>
 
         <div class="flex-container-card-top" class="col-sm-3">
@@ -119,7 +128,8 @@
                 </div>
             </div>
         </div>
-        </div>
+    -->
+        
         <!-- top 10 recipes-->
 
         <!-- Foother -->

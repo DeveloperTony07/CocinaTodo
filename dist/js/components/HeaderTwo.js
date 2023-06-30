@@ -10,8 +10,8 @@ app.component('header-two',{
         <ul class="nav-links">
             <li><a class="nav-txt mr-30" href="index.html">Inicio</a></li>
             <li><a class="nav-txt mr-30" href="uploadrecipe.html">Subir Receta</a></li>
-            <li><a class="nav-txt mr-30" href="#">Recetas Guardadas</a></li>
-            <li><a class="nav-txt mr-30" href="#">Perfil</a></li>
+            <li><a class="nav-txt mr-30" href="savedrecipes.html">Recetas Guardadas</a></li>
+            <li><a class="nav-txt mr-30" href="profile.html">Perfil</a></li>
         </ul>
     </nav>
 
@@ -22,8 +22,8 @@ app.component('header-two',{
         <div class="overlay-content">
             <li><a class="nav-txt" href="index.html">Inicio</a></li>
             <li><a class="nav-txt" href="uploadrecipe.html">Subir Receta</a></li>
-            <li><a class="nav-txt" href="#">Recetas Guardadas</a></li>
-            <li><a class="nav-txt" href="#">Perfil</a></li>
+            <li><a class="nav-txt" href="savedrecipes.html">Recetas Guardadas</a></li>
+            <li><a class="nav-txt" href="profile.html">Perfil</a></li>
         </div>
     </div>
 </header>
