@@ -14,7 +14,7 @@ app.component('recipe-card', {
             type: String
         },
 
-        ocasions: {
+        occasions: {
             type: String,
             default: "default description"
         },
@@ -50,7 +50,7 @@ app.component('recipe-card', {
     <div class="cards-body">
         <h5 class="txt-recipe-name-card text-truncate">{{ name }}</h5>
         <p class="txt-content-card ma-t-1">Categoria: <span>{{ category }}</span></p>
-        <!--<p class="txt-content-card">Área: <span>{{ area }}</span></p>-->
+        <p class="txt-content-card">Ocasiones: <span>{{ occasions }}</span></p>
         <p class="txt-content-card">Didicultad: <span>{{ level }}</span></p>
         <div class="flex-buttons">
             <button class="btn-heard" v-on:click="onClickLike(index)"><img

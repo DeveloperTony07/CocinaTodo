@@ -15,86 +15,195 @@ const app = Vue.createApp({
                     likes: 0
                 },
             ],
-            categories: [
-                { name: 'Categoria' },
-                { name: 'Cumpleaños' },
-                { name: 'Día del Padre' },
-                { name: 'Día de la Madre' },
-                { name: 'Día del niño' },
-                { name: 'Navidad' },
-                { name: 'Semana Santa' }
-            ],
             categories: [],
+            occasion: [],
+            levels: [],
+            displayedRecipes: [],
+            totalRecipes: 0
         }
     },
     mounted: function () {
-        //Connect to API
+
         //Connect to categories
-        axios({
-            method: 'get',
-            url: 'http://localhost/prueba01/public/api/recipes/categories'
-        })
-            .then(
-                (response) => {
-                    console.log(response.data);
-                    let items = response;
-                    items.forEach((element, index) => {
-                        this.categories.push({ id: index, name: element.category });
-                    });
-                }
-            )
-            .catch(
-                error => console.log(error)
-            );
-
+        this.getRecipeCategories();
+        //Connect to occasions
+        this.getRecipeOccacions();
+        //Connect to occasions
+        this.getRecipeLevels();
         //connect to API get a default recipes list
-        axios({
-            method: 'get',
-            url: 'http://localhost/prueba01/public/api/recipes/all'
-        })
-            .then(
-                (response) => {
+        this.getAllRecipes();
+        //Connect api with top 10 recipes
+        this.getTopRecipes();
+    },
+    methods: {
+        /* like method */
+        onClickLike(recipeId) {
+            const recipe = this.recipes.find(recipe => recipe.id === recipeId);
 
-                    let items = response.data;
-                    console.log(items);
-
-                    this.recipes = [];
-
-                    const route = "http://localhost/prueba01/public/storage/imgs/";
-                    items.forEach(element => {
-                        this.recipes.push({
-                            id: element.id,
-                            name: element.name,
-                            category: element.category,
-                            image: route + element.image,
-                            occasion: element.occasion,
-                            level: element.level,
-                            likes: element.likes
-                        })
-                    })
+            if (recipe) {
+                if (recipe.liked) {
+                    recipe.likes -= 1;
+                    recipe.liked = false;
+                } else {
+                    recipe.likes += 1;
+                    recipe.liked = true;
                 }
-            )
-            .catch(
-                error => console.log(error)
-            );
 
-            //Connect api with top 10 recipes
-            
+                const topRecipe = this.topRecipes.find(recipe => recipe.id === recipeId);
+                if (topRecipe) {
+                    topRecipe.likes = recipe.likes;
+                    topRecipe.liked = recipe.liked;
+                }
+            }
+        },
+        /* view recipe details method */
+        onClickViewRecipe(recipeId) {
+            axios({
+                method: 'get',
+                url: 'http://localhost/prueba01/public/api/recipes/recipe/' + recipeId
+            })
+                .then(
+                    (response) => {
+
+                        let items = response.data[0][0];
+                        console.log(response.data);
+
+                        let ingredients = response.data[1].map(ingredient => {
+                            let ingredientString = ingredient.amount + ' ' + ingredient.measurement_unit + ' ' + ingredient.description;
+                            return ingredientString;
+                        });;
+
+                        this.recipe = {
+                            id: items.id,
+                            name: items.name,
+                            image: 'http://localhost/prueba01/public/storage/imgs/' + items.image,
+                            category: items.category,
+                            occasion: items.occasion,
+                            level: items.level,
+                            description: items.description,
+                            preparation_time: items.preparation_time,
+                            cooking_time: items.cooking_time,
+                            total: items.total_time,
+                            ingredients: ingredients,
+                            instruction: items.preparation_instructions
+                        };
+
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                );
+        },
+        /* Returns the categories of the api */
+        getRecipeCategories() {
+            axios({
+                method: 'get',
+                url: 'http://localhost/prueba01/public/api/recipes/categories'
+            })
+                .then(
+                    (response) => {
+                        console.log(response.data);
+                        let items = response.data;
+
+                        items.forEach((element) => {
+                            this.categories.push({ id: element.id, name: element.category });
+                        });
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                );
+        },
+        /* Returns the occasions of the api */
+        getRecipeOccacions() {
+            axios({
+                method: 'get',
+                url: 'http://localhost/prueba01/public/api/recipes/occasions'
+            })
+                .then(
+                    (response) => {
+                        console.log(response.data);
+                        let items = response.data;
+                        items.forEach((element) => {
+                            this.occasion.push({ id: element.id, name: element.occasion });
+                        });
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                );
+        },
+        /* Returns the occasions of the api */
+        getRecipeLevels() {
+            axios({
+                method: 'get',
+                url: 'http://localhost/prueba01/public/api/recipes/levels'
+            })
+                .then(
+                    (response) => {
+                        console.log(response.data);
+                        let items = response.data;
+                        items.forEach((element) => {
+                            this.levels.push({ id: element.id, name: element.level });
+                        });
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                );
+        },
+        /* Method to display all recipes */
+        getAllRecipes() {
+            axios({
+                method: 'get',
+                url: 'http://localhost/prueba01/public/api/recipes/all'
+            })
+                .then(
+                    (response) => {
+
+                        let items = response.data;
+                        console.log(items);
+
+                        this.totalRecipes = items.length;
+                        this.recipes = [];
+
+                        const route = "http://localhost/prueba01/public/storage/imgs/";
+                        items.forEach(element => {
+                            this.recipes.push({
+                                id: element.id,
+                                name: element.name,
+                                image: route + element.image,
+                                category: element.category,
+                                occasion: element.occasion,
+                                level: element.level,
+                                likes: element.likes
+                            });
+                        });
+                        // Copy the first 8 recipes to displayedRecipes
+                        this.displayedRecipes = this.recipes.slice(0, 8);
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                );
+        },
+        /* method to display top 10 recipes */
+        getTopRecipes() {
             axios({
                 method: 'get',
                 url: 'http://localhost/prueba01/public/api/recipes/top10'
             })
                 .then(
                     (response) => {
-    
+
                         let items = response.data;
                         console.log(items);
-    
+
                         this.topRecipes = [];
-    
+
                         const route = "http://localhost/prueba01/public/storage/imgs/";
                         items.forEach(element => {
-                            this.recipes.push({
+                            this.topRecipes.push({
                                 id: element.id,
                                 name: element.name,
                                 category: element.category,
@@ -109,129 +218,163 @@ const app = Vue.createApp({
                 .catch(
                     error => console.log(error)
                 );
-                
-    },
-    methods: {
+        },
+        /* method to filter by name */
+        searchRecipeByName(name) {
 
-        /*
-        fillDataDetails() {
-            for (let i = 0; i < this.recipes.length; i++) {
-                axios({
-                    method: 'get',
-                    url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i='+ this.recipes[i].id
-                })
-                    .then(
-                        (response) => {
-                            let items = response.data;
-                            console.log(items);
-                            //this.recipes[i].category= items.category,
-                                this.recipes[i].level = "Easy",
-                                this.recipes[i].categorie = "NA",
-                                this.recipes[i].instructions = "NA"
-                        }
-                    )
-                    .catch(
-                        error => console.log(error)
-                    );
-            }*/
-        /*
-        fillRecipeDetails() {
-            for (let index = 0; index < this.recipes.length; index++) {
-                /// console.log(this.recipes[index].id);
-
-                axios({
-                    method: 'get',
-                    url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + this.recipes[index].id
-
-                })
-                    .then(
-                        (response) => {
-                            let items = response.data.meals[0];
-                            console.log(items);
-                            this.recipes[index].category = items.strCategory;
-                            this.recipes[index].area = items.strArea;
-                        }
-                    )
-                    .catch(
-                        error => console.log(error)
-                    );
-            }
-        },*/
-        /*
-        fillDataDetails() {
-            for (let i = 0; i < this.recipes.length; i++) {
-                axios({
-                    method: 'get',
-                    url: 'https://api.spoonacular.com/recipes/' + this.recipes[i].id + '/information?includeNutrition=false&apiKey=5307c86c068f49209b1fe0e7bafc68df'
-                })
-                    .then(
-                        (response) => {
-                            let items = response.data;
-                            console.log(items);
-                            //this.recipes[i].category= items.category,
-                            this.recipes[i].time = items.readyInMinutes + " min",
-                                this.recipes[i].level = "Easy",
-                                this.recipes[i].likes = items.aggregateLikes,
-                                this.recipes[i].ingredients = "NA",
-                                this.recipes[i].instructions = "NA"
-                        }
-                    )
-                    .catch(
-                        error => console.log(error)
-                    );
-            }
-        },*/
-        onClickLike(index) {
-            const recipe = this.recipes[index - 1];
-            if (recipe.liked) {
-                recipe.likes -= 1;
-                recipe.liked = false;
+            this.name = name;
+            if (this.name === '') {
+                this.getAllRecipes();
             } else {
-                recipe.likes += 1;
-                recipe.liked = true;
-            }
-        },
-        onClickViewRecipe(index) {
-            //console.log(index);
-
-            //this.selectedIndex = index;
-            //get recipe details
-            axios({
-                method: 'get',
-                url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + index
-            })
-                .then(
-                    (response) => {
-
-                        let items = response.data.meals[0];
+                axios({
+                    method: 'get',
+                    url: 'http://localhost/prueba01/public/api/recipes/searchbyname/' + name
+                })
+                    .then((response) => {
+                        let items = response.data;
                         console.log(items);
-                        this.recipe.id = index;
-                        this.recipe.image = items.strMealThumb;
-                        this.recipe.name = items.strMeal;
-                        this.recipe.category = items.strCategory;
 
-                    }
-                )
-                .catch(
-                    error => console.log(error)
-                );
-        },
-        onClickPrev() {
-            this.selectedIndex--;
-            if (this.selectedIndex < 0) {
-                this.selectedIndex = this.recipes.length - 1;
+                        const route = "http://localhost/prueba01/public/storage/imgs/";
+                        this.totalRecipes = items.length;
+                        this.recipes = [];
+
+                        items.forEach((element) => {
+                            this.recipes.push({
+                                id: element.id,
+                                name: element.name,
+                                image: route + element.image,
+                                category: element.category,
+                                occasion: element.occasion,
+                                level: element.level,
+                                likes: element.likes
+                            });
+                        });
+
+                        this.displayedRecipes = this.recipes.slice(0, 8);
+                    })
+                    .catch((error) => console.log(error));
             }
         },
-        onClickNext() {
-            this.selectedIndex++;
-            if (this.selectedIndex >= this.recipes.length) {
-                this.selectedIndex = 0;
+        /* method to filter by category */
+        filterRecipeByCategory(category) {
+            if (category === '0') {
+                this.getAllRecipes();
+            } else {
+                axios({
+                    method: 'get',
+                    url: 'http://localhost/prueba01/public/api/recipes/filterby/category/' + category
+                })
+                    .then((response) => {
+                        let items = response.data;
+                        console.log(items);
+
+                        const route = "http://localhost/prueba01/public/storage/imgs/";
+
+                        this.totalRecipes = items.length;
+                        this.recipes = [];
+
+                        items.forEach((element) => {
+                            this.recipes.push({
+                                id: element.id,
+                                name: element.name,
+                                image: route + element.image,
+                                category: element.category,
+                                occasion: element.occasion,
+                                level: element.level,
+                                likes: element.likes
+                            });
+                        });
+
+                        this.displayedRecipes = this.recipes.slice(0, 8);
+                    })
+                    .catch((error) => console.log(error));
             }
+        },
+        /* method to filter by occasion */
+        filterRecipeByOccasion(occasion) {
+            if (occasion === '0') {
+                this.getAllRecipes();
+            } else {
+                axios({
+                    method: 'get',
+                    url: 'http://localhost/prueba01/public/api/recipes/filterby/occasion/' + occasion
+                })
+                    .then((response) => {
+                        let items = response.data;
+                        console.log(items);
+
+                        const route = "http://localhost/prueba01/public/storage/imgs/";
+
+                        this.totalRecipes = items.length;
+                        this.recipes = [];
+
+                        items.forEach((element) => {
+                            this.recipes.push({
+                                id: element.id,
+                                name: element.name,
+                                image: route + element.image,
+                                category: element.category,
+                                occasion: element.occasion,
+                                level: element.level,
+                                likes: element.likes
+                            });
+                        });
+
+                        this.displayedRecipes = this.recipes.slice(0, 8);
+                    })
+                    .catch((error) => console.log(error));
+            }
+        },
+        /* method to filter by level */
+        filterRecipeByLevel(level) {
+            if (level === '0') {
+                this.getAllRecipes();
+            } else {
+                axios({
+                    method: 'get',
+                    url: 'http://localhost/prueba01/public/api/recipes/filterby/level/' + level
+                })
+                    .then((response) => {
+                        let items = response.data;
+                        console.log(items);
+
+                        const route = "http://localhost/prueba01/public/storage/imgs/";
+
+                        this.totalRecipes = items.length;
+                        this.recipes = [];
+
+                        items.forEach((element) => {
+                            this.recipes.push({
+                                id: element.id,
+                                name: element.name,
+                                image: route + element.image,
+                                category: element.category,
+                                occasion: element.occasion,
+                                level: element.level,
+                                likes: element.likes
+                            });
+                        });
+
+                        this.displayedRecipes = this.recipes.slice(0, 8);
+                    })
+                    .catch((error) => console.log(error));
+            }
+        },
+        /* Method to display more recipes */
+        loadMoreRecipes() {
+            const startIndex = this.displayedRecipes.length;
+            const endIndex = startIndex + 8;
+            const newRecipes = this.recipes.slice(startIndex, endIndex);
+            this.displayedRecipes = this.displayedRecipes.concat(newRecipes);
         }
+
     },
+
 });
 
 //init custom events for components
 const emitter = mitt();
 //global propety for custom events
 app.config.globalProperties.$test = emitter;
+
+

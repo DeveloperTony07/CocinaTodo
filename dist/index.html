@@ -22,7 +22,6 @@
 
 <body>
     <section id="app">
-
         <!-- Open Header -->
         <header-component></header-component>
         <!-- Close Header -->
@@ -31,105 +30,75 @@
         <img-header></img-header>
         <!-- End ImgHeader -->
 
-        <!-- Start secction filters -->
-        <filters-component></filters-component>
-        <!-- End Secction filters-->
 
+        <!-- Start secction filters 
+        <filters-component :total="totalRecipes" :categoriesd="categories" :occasionsd="occasion" 
+        :levelsd="levels" v-on:searchname="searchRecipeByName"></filters-component> -->
+        <!-- End secction filters -->
 
-        <!-- Stard Section Carsds -->
+        <div class="m-basic-2 container-row">
+            <h2 class="txt-filters">Buscar <span>Recetas</span></h2>
+            <h2 class="txt-filters ml-filters">Elegir <span>Recetas por</span></h2>
+        </div>
+        <!-- Search bar -->
+        <section class="container-search">
+            <search-component v-on:searchname="searchRecipeByName"></search-component>
+            <!-- Dropdowns Category 
+            <div class="dropdowns  ml-30">
+                <select>
+                    <option v-for="(category, index) in categories">
+                        <filter-category :id="category.id" :name="category.name"
+                        v-on:searchByCategory="filterRecipeByCategory(index)"></filter-category>
+                    </option>
+                </select>
+            </div>
+            -->
+            <!-- Dropdowns Occacion -->
+                <filter-occasion :occasionsd="occasion" v-on:occasion-changed="filterRecipeByOccasion"></filter-occasion>
+            <!-- Dropdowns Level -->
+                <filter-level :levelsd="levels" v-on:level-changed="filterRecipeByLevel"></filter-level>
+            <!-- Dropdown Category -->
+            <filter-category :categoriesd="categories" v-on:category-changed="filterRecipeByCategory"></filter-category>
+        </section>
+        <div class="m-basic">
+            <h2 class="txt-filters m-negative-1">{{totalRecipes}}<span> Resultados</span></h2>
+        </div>
+
+        <!-- Start recipe-details -->
+        <recipe-details :id="recipe.id" :name="recipe.name" :image="recipe.image" :category="recipe.category"
+            :occasion="recipe.occasion" :level="recipe.level" :preparation="recipe.preparation_time"
+            :cooking="recipe.cooking_time" :total="recipe.total" :description="recipe.description"
+            :ingredients="recipe.ingredients" :instruction="recipe.instruction"></recipe-details>
+        <!-- End recipe-details -->
+
+        <!-- Start Section Carsds -->
+
         <section>
             <div class="flex-container-card" class="col-sm-3">
-                <div v-for="(item,index) in recipes">
+                <div v-for="(item,index) in displayedRecipes">
                     <recipe-card :index="item.id" :image="item.image" :name="item.name" :category="item.category"
-                    :level="item.level" :likes="item.likes" v-on:recipedetails="onClickViewRecipe" v-on:recipelike="onClickLike">
+                        :occasions="item.occasion" :level="item.level" :likes="item.likes"
+                        v-on:recipedetails="onClickViewRecipe" v-on:recipelike="onClickLike">
                     </recipe-card>
                 </div>
             </div>
         </section>
 
-        <!-- recipe-details -->
-        <recipe-details :name="recipe.name" :image="recipe.image" :id="recipe.id" :category="recipe.category"
-            :area="recipe.area"></recipe-details>
-
-        <!-- Modal 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class=" txt-modal-name fs-5" id="staticBackdropLabel">
-                            {{recipes[selectedIndex].name}}
-                        </h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body txt-modal-content">
-                        <img class="d-block m-auto img-fluid" v-bind:src="recipes[selectedIndex].image"
-                            alt="img">
-                        <p class="txt-center pt-3">Categoria:
-                            <span>Deafultcategoria</span>
-                        </p>
-                        <p class="txt-center pt-3">Ocaciones:
-                            <span>DeafultOcaciones</span>
-                        </p>
-                        <p class="txt-center pt-3">Nivel: <span>DeafultLevel</span>
-                        </p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" v-on:click="onClickPrev()">Prev</button>
-                        <button type="button" class="btn btn-secondary" v-on:click="onClickPrev()">Next</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-            Modal -->
-
         <!--End section Cards-->
 
-        <button class="btn-see-more">Ver Más</button>
+        <button class="btn-see-more" @click="loadMoreRecipes">Ver Más</button>
 
         <!-- top 10 recipes-->
-
-        <h2 class="txt-filters m-basic ml-toprecipes">10 <span>Mejores Recetas</span></h2>
-
-        <!--
-        <div class="flex-container-card-top" class="col-sm-3">
-            <div v-for="(item,index) in topRecipes">-->
-
-
-        <!--
-        <h2 class="txt-filters m-basic ml-toprecipes">10 <span>Mejores Recetas</span></h2>
+        <h2 id="top-recipes" class="txt-filters m-basic ml-toprecipes">10 <span>Mejores Recetas</span></h2>
 
         <div class="flex-container-card-top" class="col-sm-3">
-            <div v-for="(item,index) in recipes">
-
-                <div class="cards-top">
-                    <div class="img-top">
-                        <img v-bind:src="item.image" class="card-img-top" alt="receta">
-                        <button class="btn-save-top"><img src="svgs/bookmark_add.svg" alt="add"></button>
-                    </div>
-                    <div class="margin-body">
-                        <div>
-                            <h5 class="txt-name-top">{{item.name}}</h5>
-                        </div>
-                        <div>
-                            <p class="txt-content-card ma-t-1">Categoria: <span>{{item.category}}</span></p>
-                            <p class="txt-content-card">Ocación: <span>{{item.ocasions}}</span></p>
-                            <p class="txt-content-card">Didicultad: <span>{{item.level}}</span></p>
-                        </div>
-                        <div class="flex-btn-like">
-                            <button class="btn-heard" v-on:click="onClickLike(index)"><img src="svgs/heard-1.svg"
-                                    alt="heard"></button>
-                            <p class="txt-num-like2">{{item.likes}}</p>
-                        </div>
-                        <div>
-                            <button class="btn-red btn-movil"><a href="#">Ver Receta</a></button>
-                        </div>
-                    </div>
-                </div>
+            <div v-for="(item,index) in topRecipes">
+                <recipe-top :id="item.id" :image="item.image" :name="item.name" :category="item.category"
+                    :occasions="item.occasion" :level="item.level" :likes="item.likes"
+                    v-on:recipedetails="onClickViewRecipe" v-on:recipelike="onClickLike">
+                </recipe-top>
             </div>
         </div>
-    -->
-        
         <!-- top 10 recipes-->
 
         <!-- Foother -->
@@ -149,9 +118,13 @@
     <!-- ComponentsJS -->
     <script src="js/components/Header.js"></script>
     <script src="js/components/ImgHeader.js"></script>
-    <script src="js/components/Filters.js"></script>
+    <script src="js/components/Searsh.js"></script>
+    <script src="js/components/FilterCategory.js"></script>
+    <script src="js/components/FilterOccasion.js"></script>
+    <script src="js/components/FilterLevel.js"></script>
     <script src="js/components/RecipeCard.js"></script>
-    <script src="js/components/RecipeDetils.js"></script>
+    <script src="js/components/RecipeDetails.js"></script>
+    <script src="js/components/RecipeTop10.js"></script>
     <script src="js/components/Footer.js"></script>
 
     <script>
@@ -167,28 +140,3 @@
 </body>
 
 </html>
-
-<!--
-                    <div class="cards">
-                        <div>
-                            <img v-bind:src="item.image" class="card-img-top" alt="receta">
-                            <button class="btn-save"><img src="svgs/bookmark_add.svg" alt="add"></button>
-                        </div>
-                        <div class="cards-body">
-                            <h5 class="txt-recipe-name-card">{{item.name}}</h5>
-                            <p class="txt-content-card ma-t-1">Categoria: <span>{{item.category}}</span></p>
-                            <p class="txt-content-card">Ocación: <span>{{item.ocasions}}</span></p>
-                            <p class="txt-content-card">Didicultad: <span>{{item.level}}</span></p>
-                            <div>
-                                <div class="flex-buttons">
-                                    <button class="btn-heard" v-on:click="onClickLike(index)"><img
-                                            src="svgs/heard-1.svg" alt="heard"></button>
-                                    <p class="txt-num-like">{{item.likes}}</p>
-                                </div>
-                            </div>
-
-                            <button class="btn-red" v-on:click="onClickViewRecipe(index)" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal"><a href="#">VER RECETA</a></button>
-                        </div>
-                    </div>
-                    -->

@@ -38,7 +38,6 @@
     list-style: none;
 }
 
-// 
 .header .nav-links li {
     display: inline-block;
 }
@@ -106,7 +105,7 @@
 
 /* Nav */
 .header .overlay {
-    height: 300px;
+    height: 55%;
     width: 0;
     position: fixed;
     z-index: 1;
@@ -158,8 +157,6 @@
 }
 
 /* Nav */
-
-
 .header .overlay-two {
     height: 250px;
     width: 0;

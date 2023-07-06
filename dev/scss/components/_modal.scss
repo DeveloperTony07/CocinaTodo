@@ -15,5 +15,10 @@
     @include mixins.set-font(vars.$fw-regular, vars.$fs-med, vars.$clr-dark);
 }
 
+.imgRecipe{
+    height: 450px;
+    width: 100%;
+}
+
 /* Texto Modal */
 

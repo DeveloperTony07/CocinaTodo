@@ -643,6 +643,11 @@ body {
   color: rgb(1, 10, 38);
 }
 
+.imgRecipe {
+  height: 450px;
+  width: 100%;
+}
+
 /* Texto Modal */
 .btn-save {
   background-color: white;
@@ -937,7 +942,7 @@ body {
 }
 /* Nav */
 .header .overlay {
-  height: 300px;
+  height: 55%;
   width: 0;
   position: fixed;
   z-index: 1;
